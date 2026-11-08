@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сообща — превью проекта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@400;500;600&display=swap">
+<style>
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:block))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-border-style:solid;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:initial;--tw-backdrop-hue-rotate:initial;--tw-backdrop-invert:initial;--tw-backdrop-opacity:initial;--tw-backdrop-saturate:initial;--tw-backdrop-sepia:initial;--tw-duration:initial}}}@layer theme{:root,:host{--font-sans:"Onest Variable", system-ui, sans-serif;--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--spacing:.25rem;--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-base:1rem;--text-base--line-height:calc(1.5 / 1);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-5xl:3rem;--text-5xl--line-height:1;--font-weight-medium:500;--font-weight-semibold:600;--radius-3xl:1.5rem;--blur-md:12px;--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);--color-paper:#ede5d7;--color-surface:#f8f5ef;--color-sand:#e3d8c5;--color-line:#ddd3c2;--color-ink:#17201c;--color-ink-2:#4a544f;--color-ink-3:#6b6559;--color-forest:#1e5c4a;--color-forest-700:#164637;--color-mint:#ddeee6;--color-coral:#ef7556;--color-coral-soft:#fce3da;--color-sun:#f4c14e;--color-sun-soft:#fcf0cf;--color-lilac:#8f7eea;--color-lilac-soft:#ece8fd;--font-display:"Unbounded Variable", system-ui, sans-serif}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring:where(:not(iframe)){outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.visible{visibility:visible}.sr-only{clip-path:inset(50%);white-space:nowrap;border-width:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.top-0{top:0}.top-\[6\%\]{top:6%}.top-\[8\%\]{top:8%}.top-\[14\%\]{top:14%}.top-\[24\%\]{top:24%}.top-\[34\%\]{top:34%}.top-\[42\%\]{top:42%}.top-\[58\%\]{top:58%}.top-\[62\%\]{top:62%}.top-\[78\%\]{top:78%}.top-\[88\%\]{top:88%}.left-1\/2{left:50%}.left-\[4\%\]{left:4%}.left-\[10\%\]{left:10%}.left-\[16\%\]{left:16%}.left-\[22\%\]{left:22%}.left-\[36\%\]{left:36%}.left-\[42\%\]{left:42%}.left-\[44\%\]{left:44%}.left-\[64\%\]{left:64%}.left-\[70\%\]{left:70%}.left-\[86\%\]{left:86%}.z-30{z-index:30}.-mx-5{margin-inline:calc(var(--spacing) * -5)}.mx-auto{margin-inline:auto}.mt-1{margin-top:var(--spacing)}.mt-2\.5{margin-top:calc(var(--spacing) * 2.5)}.mt-3{margin-top:calc(var(--spacing) * 3)}.mt-5{margin-top:calc(var(--spacing) * 5)}.mt-6{margin-top:calc(var(--spacing) * 6)}.mt-7{margin-top:calc(var(--spacing) * 7)}.mt-8{margin-top:calc(var(--spacing) * 8)}.mt-10{margin-top:calc(var(--spacing) * 10)}.mt-auto{margin-top:auto}.-ml-2\.5{margin-left:calc(var(--spacing) * -2.5)}.-ml-5{margin-left:calc(var(--spacing) * -5)}.ml-auto{margin-left:auto}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.inline-flex{display:inline-flex}.table{display:table}.aspect-square{aspect-ratio:1}.size-2{width:calc(var(--spacing) * 2);height:calc(var(--spacing) * 2)}.size-9{width:calc(var(--spacing) * 9);height:calc(var(--spacing) * 9)}.size-10{width:calc(var(--spacing) * 10);height:calc(var(--spacing) * 10)}.size-12{width:calc(var(--spacing) * 12);height:calc(var(--spacing) * 12)}.size-\[36\%\]{width:36%;height:36%}.size-\[52px\]{width:52px;height:52px}.size-\[62\%\]{width:62%;height:62%}.size-\[72\%\]{width:72%;height:72%}.h-2{height:calc(var(--spacing) * 2)}.h-full{height:100%}.min-h-11{min-height:calc(var(--spacing) * 11)}.min-h-12{min-height:calc(var(--spacing) * 12)}.min-h-full{min-height:100%}.w-20{width:calc(var(--spacing) * 20)}.w-24{width:calc(var(--spacing) * 24)}.w-40{width:calc(var(--spacing) * 40)}.w-fit{width:fit-content}.w-full{width:100%}.max-w-\[480px\]{max-width:480px}.max-w-\[520px\]{max-width:520px}.max-w-\[560px\]{max-width:560px}.max-w-\[1280px\]{max-width:1280px}.flex-1{flex:1}.shrink-0{flex-shrink:0}.border-collapse{border-collapse:collapse}.-translate-x-1\/2{--tw-translate-x:calc(calc(1 / 2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y)}.-translate-y-1\/2{--tw-translate-y:calc(calc(1 / 2 * 100%) * -1);translate:var(--tw-translate-x) var(--tw-translate-y)}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.items-start{align-items:flex-start}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-1{gap:var(--spacing)}.gap-1\.5{gap:calc(var(--spacing) * 1.5)}.gap-2{gap:calc(var(--spacing) * 2)}.gap-2\.5{gap:calc(var(--spacing) * 2.5)}.gap-3{gap:calc(var(--spacing) * 3)}.gap-3\.5{gap:calc(var(--spacing) * 3.5)}.gap-4{gap:calc(var(--spacing) * 4)}.gap-5{gap:calc(var(--spacing) * 5)}.gap-6{gap:calc(var(--spacing) * 6)}.gap-7{gap:calc(var(--spacing) * 7)}.gap-9{gap:calc(var(--spacing) * 9)}.gap-10{gap:calc(var(--spacing) * 10)}.gap-12{gap:calc(var(--spacing) * 12)}.gap-x-7{column-gap:calc(var(--spacing) * 7)}.gap-y-2{row-gap:calc(var(--spacing) * 2)}.overflow-x-auto{overflow-x:auto}.overflow-x-clip{overflow-x:clip}.rounded-3xl{border-radius:var(--radius-3xl)}.rounded-\[20px\]{border-radius:20px}.rounded-\[28px\]{border-radius:28px}.rounded-\[32px\]{border-radius:32px}.rounded-full{border-radius:2147483647px}.border{border-style:var(--tw-border-style);border-width:1px}.border-\[1\.5px\]{border-style:var(--tw-border-style);border-width:1.5px}.border-y{border-block-style:var(--tw-border-style);border-block-width:1px}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.border-dashed{--tw-border-style:dashed;border-style:dashed}.border-forest\/60{border-color:#1e5c4a99}@supports (color:color-mix(in lab, red, red)){.border-forest\/60{border-color:color-mix(in oklab, var(--color-forest) 60%, transparent)}}.border-line{border-color:var(--color-line)}.border-line\/70{border-color:#ddd3c2b3}@supports (color:color-mix(in lab, red, red)){.border-line\/70{border-color:color-mix(in oklab, var(--color-line) 70%, transparent)}}.bg-coral{background-color:var(--color-coral)}.bg-coral-soft{background-color:var(--color-coral-soft)}.bg-forest{background-color:var(--color-forest)}.bg-forest-700{background-color:var(--color-forest-700)}.bg-ink{background-color:var(--color-ink)}.bg-lilac-soft{background-color:var(--color-lilac-soft)}.bg-line{background-color:var(--color-line)}.bg-mint{background-color:var(--color-mint)}.bg-paper{background-color:var(--color-paper)}.bg-paper\/85{background-color:#ede5d7d9}@supports (color:color-mix(in lab, red, red)){.bg-paper\/85{background-color:color-mix(in oklab, var(--color-paper) 85%, transparent)}}.bg-sun{background-color:var(--color-sun)}.bg-sun-soft{background-color:var(--color-sun-soft)}.bg-surface{background-color:var(--color-surface)}.bg-surface\/60{background-color:#f8f5ef99}@supports (color:color-mix(in lab, red, red)){.bg-surface\/60{background-color:color-mix(in oklab, var(--color-surface) 60%, transparent)}}.bg-transparent{background-color:#0000}.p-4{padding:calc(var(--spacing) * 4)}.p-5{padding:calc(var(--spacing) * 5)}.p-6{padding:calc(var(--spacing) * 6)}.p-7{padding:calc(var(--spacing) * 7)}.px-3\.5{padding-inline:calc(var(--spacing) * 3.5)}.px-4{padding-inline:calc(var(--spacing) * 4)}.px-5{padding-inline:calc(var(--spacing) * 5)}.px-7{padding-inline:calc(var(--spacing) * 7)}.py-1\.5{padding-block:calc(var(--spacing) * 1.5)}.py-2{padding-block:calc(var(--spacing) * 2)}.py-2\.5{padding-block:calc(var(--spacing) * 2.5)}.py-3{padding-block:calc(var(--spacing) * 3)}.py-3\.5{padding-block:calc(var(--spacing) * 3.5)}.py-4{padding-block:calc(var(--spacing) * 4)}.py-8{padding-block:calc(var(--spacing) * 8)}.py-16{padding-block:calc(var(--spacing) * 16)}.pt-4{padding-top:calc(var(--spacing) * 4)}.pt-8{padding-top:calc(var(--spacing) * 8)}.pt-10{padding-top:calc(var(--spacing) * 10)}.pb-16{padding-bottom:calc(var(--spacing) * 16)}.pb-20{padding-bottom:calc(var(--spacing) * 20)}.text-center{text-align:center}.font-display{font-family:var(--font-display)}.text-5xl{font-size:var(--text-5xl);line-height:var(--tw-leading,var(--text-5xl--line-height))}.text-base{font-size:var(--text-base);line-height:var(--tw-leading,var(--text-base--line-height))}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading,var(--text-lg--line-height))}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.text-\[13px\]{font-size:13px}.text-\[15px\]{font-size:15px}.text-\[21px\]{font-size:21px}.text-\[22px\]{font-size:22px}.text-\[30px\]{font-size:30px}.text-\[40px\]{font-size:40px}.leading-\[1\.1\]{--tw-leading:1.1;line-height:1.1}.leading-\[1\.3\]{--tw-leading:1.3;line-height:1.3}.leading-\[1\.05\]{--tw-leading:1.05;line-height:1.05}.leading-\[1\.5\]{--tw-leading:1.5;line-height:1.5}.leading-\[1\.6\]{--tw-leading:1.6;line-height:1.6}.leading-\[1\.15\]{--tw-leading:1.15;line-height:1.15}.leading-\[1\.55\]{--tw-leading:1.55;line-height:1.55}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium)}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold)}.tracking-\[-0\.01em\]{--tw-tracking:-.01em;letter-spacing:-.01em}.tracking-\[-0\.04em\]{--tw-tracking:-.04em;letter-spacing:-.04em}.tracking-\[-0\.045em\]{--tw-tracking:-.045em;letter-spacing:-.045em}.tracking-\[0\.08em\]{--tw-tracking:.08em;letter-spacing:.08em}.whitespace-nowrap{white-space:nowrap}.text-coral{color:var(--color-coral)}.text-forest{color:var(--color-forest)}.text-forest-700{color:var(--color-forest-700)}.text-ink{color:var(--color-ink)}.text-ink-2{color:var(--color-ink-2)}.text-ink-3{color:var(--color-ink-3)}.text-lilac{color:var(--color-lilac)}.text-mint{color:var(--color-mint)}.text-sun{color:var(--color-sun)}.text-surface{color:var(--color-surface)}.uppercase{text-transform:uppercase}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-card{--tw-shadow:0 1px 0 var(--tw-shadow-color,#17201c0a), 0 10px 30px -14px var(--tw-shadow-color,#17201c2e);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-float{--tw-shadow:0 24px 50px -18px var(--tw-shadow-color,#17201c47);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.ring{--tw-ring-shadow:var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.ring-\[2\.5px\]{--tw-ring-shadow:var(--tw-ring-inset, ) 0 0 0 calc(2.5px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.ring-forest{--tw-ring-color:var(--color-forest)}.ring-paper{--tw-ring-color:var(--color-paper)}.ring-surface{--tw-ring-color:var(--color-surface)}.outline{outline-style:var(--tw-outline-style);outline-width:1px}.drop-shadow-\[0_10px_18px_rgb\(23_32_28\/0\.16\)\]{--tw-drop-shadow-size:drop-shadow(0 10px 18px var(--tw-drop-shadow-color,#17201c29));--tw-drop-shadow:var(--tw-drop-shadow-size);filter:var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, )}.backdrop-blur-md{--tw-backdrop-blur:blur(var(--blur-md));-webkit-backdrop-filter:var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );backdrop-filter:var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, )}.transition-colors{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.duration-150{--tw-duration:.15s;transition-duration:.15s}.outline-none{--tw-outline-style:none;outline-style:none}.placeholder\:text-ink-3::placeholder{color:var(--color-ink-3)}.focus-within\:border-forest:focus-within{border-color:var(--color-forest)}@media (hover:hover){.hover\:bg-forest-700:hover{background-color:var(--color-forest-700)}.hover\:bg-mint:hover{background-color:var(--color-mint)}.hover\:bg-sand\/50:hover{background-color:#e3d8c580}@supports (color:color-mix(in lab, red, red)){.hover\:bg-sand\/50:hover{background-color:color-mix(in oklab, var(--color-sand) 50%, transparent)}}.hover\:text-ink:hover{color:var(--color-ink)}.hover\:brightness-95:hover{--tw-brightness:brightness(95%);filter:var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, )}}.disabled\:opacity-50:disabled{opacity:.5}@media (min-width:40rem){.sm\:top-\[30\%\]{top:30%}.sm\:left-\[26\%\]{left:26%}.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:translate-x-0{--tw-translate-x:0px;translate:var(--tw-translate-x) var(--tw-translate-y)}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:px-5{padding-inline:calc(var(--spacing) * 5)}.sm\:text-\[52px\]{font-size:52px}}@media (min-width:48rem){.md\:mx-0{margin-inline:0}.md\:inline{display:inline}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:flex-wrap{flex-wrap:wrap}.md\:items-center{align-items:center}.md\:items-end{align-items:flex-end}.md\:justify-between{justify-content:space-between}.md\:gap-3{gap:calc(var(--spacing) * 3)}.md\:gap-5{gap:calc(var(--spacing) * 5)}.md\:rounded-\[40px\]{border-radius:40px}.md\:p-5{padding:calc(var(--spacing) * 5)}.md\:p-6{padding:calc(var(--spacing) * 6)}.md\:p-8{padding:calc(var(--spacing) * 8)}.md\:p-14{padding:calc(var(--spacing) * 14)}.md\:px-0{padding-inline:0}.md\:px-5{padding-inline:calc(var(--spacing) * 5)}.md\:px-8{padding-inline:calc(var(--spacing) * 8)}.md\:py-4{padding-block:calc(var(--spacing) * 4)}.md\:py-24{padding-block:calc(var(--spacing) * 24)}.md\:pt-12{padding-top:calc(var(--spacing) * 12)}.md\:pt-16{padding-top:calc(var(--spacing) * 16)}.md\:pb-24{padding-bottom:calc(var(--spacing) * 24)}.md\:text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.md\:text-\[17px\]{font-size:17px}.md\:text-\[40px\]{font-size:40px}.md\:text-\[44px\]{font-size:44px}}@media (min-width:64rem){.lg\:flex{display:flex}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-\[1\.2fr_1fr\]{grid-template-columns:1.2fr 1fr}.lg\:items-center{align-items:center}.lg\:gap-6{gap:calc(var(--spacing) * 6)}.lg\:gap-16{gap:calc(var(--spacing) * 16)}.lg\:p-\[72px\]{padding:72px}.lg\:pb-24{padding-bottom:calc(var(--spacing) * 24)}.lg\:text-\[56px\]{font-size:56px}}@media (min-width:80rem){.xl\:text-\[64px\]{font-size:64px}}}html{background:var(--color-paper);color:var(--color-ink);-webkit-text-size-adjust:100%}body{font-family:var(--font-sans)}:focus-visible{outline:3px solid var(--color-forest);outline-offset:2px}.no-scrollbar{scrollbar-width:none}.no-scrollbar::-webkit-scrollbar{display:none}@property --tw-translate-x{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-y{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-z{syntax:"*";inherits:false;initial-value:0}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-leading{syntax:"*";inherits:false}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-tracking{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-outline-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-blur{syntax:"*";inherits:false}@property --tw-brightness{syntax:"*";inherits:false}@property --tw-contrast{syntax:"*";inherits:false}@property --tw-grayscale{syntax:"*";inherits:false}@property --tw-hue-rotate{syntax:"*";inherits:false}@property --tw-invert{syntax:"*";inherits:false}@property --tw-opacity{syntax:"*";inherits:false}@property --tw-saturate{syntax:"*";inherits:false}@property --tw-sepia{syntax:"*";inherits:false}@property --tw-drop-shadow{syntax:"*";inherits:false}@property --tw-drop-shadow-color{syntax:"*";inherits:false}@property --tw-drop-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-drop-shadow-size{syntax:"*";inherits:false}@property --tw-backdrop-blur{syntax:"*";inherits:false}@property --tw-backdrop-brightness{syntax:"*";inherits:false}@property --tw-backdrop-contrast{syntax:"*";inherits:false}@property --tw-backdrop-grayscale{syntax:"*";inherits:false}@property --tw-backdrop-hue-rotate{syntax:"*";inherits:false}@property --tw-backdrop-invert{syntax:"*";inherits:false}@property --tw-backdrop-opacity{syntax:"*";inherits:false}@property --tw-backdrop-saturate{syntax:"*";inherits:false}@property --tw-backdrop-sepia{syntax:"*";inherits:false}@property --tw-duration{syntax:"*";inherits:false}
+
+:root { --font-display: "Unbounded", system-ui, sans-serif; --font-sans: "Onest", system-ui, sans-serif; }
+body { font-family: "Onest", system-ui, sans-serif; }
+.font-display { font-family: "Unbounded", system-ui, sans-serif !important; }
+.pv-bar { position: sticky; top: 0; z-index: 60; display: flex; gap: 6px; overflow-x: auto; padding: 10px 14px;
+  background: #17201c; scrollbar-width: none; }
+.pv-bar a { flex: none; color: #f8f5ef; text-decoration: none; font: 600 14px/1 "Onest", sans-serif;
+  padding: 10px 14px; border-radius: 999px; }
+.pv-bar a[aria-current="page"] { background: #f8f5ef; color: #17201c; }
+.pv-bar span { flex: none; color: #ddeee6; font: 500 13px/1 "Onest", sans-serif; padding: 10px 6px 10px 0; }
+.pv-view { display: none; }
+.pv-view.on { display: flex; flex-direction: column; min-height: 100vh; }
+/* Внутри превью шапка сайта прилипает под панелью вкладок */
+.pv-view header.sticky { top: 52px; }
+.doc { max-width: 860px; margin: 0 auto; padding: 32px 20px 80px; color: #17201c; line-height: 1.65; font-size: 16px; }
+.doc h1 { font: 500 34px/1.15 "Unbounded", sans-serif; letter-spacing: -0.04em; margin: 8px 0 20px; }
+.doc h2 { font: 500 24px/1.25 "Unbounded", sans-serif; letter-spacing: -0.02em; margin: 40px 0 14px; }
+.doc h3 { font: 600 18px/1.3 "Onest", sans-serif; margin: 28px 0 10px; }
+.doc p, .doc ul, .doc ol { margin: 0 0 14px; }
+.doc ul, .doc ol { padding-left: 22px; } .doc ul { list-style: disc; } .doc ol { list-style: decimal; }
+.doc li { margin: 4px 0; }
+.doc a { color: #1e5c4a; text-decoration: underline; }
+.doc strong { font-weight: 650; }
+.doc code { background: #e3d8c5; padding: 1px 6px; border-radius: 6px; font-size: 0.92em; }
+.doc pre { background: #f8f5ef; border: 1px solid #ddd3c2; border-radius: 16px; padding: 16px; overflow-x: auto; margin: 0 0 16px; }
+.doc pre code { background: none; padding: 0; font-size: 13px; line-height: 1.45; display: block; }
+.doc hr { border: 0; border-top: 1px solid #ddd3c2; margin: 32px 0; }
+.doc table { display: block; overflow-x: auto; border-collapse: collapse; margin: 0 0 18px; font-size: 14.5px;
+  background: #f8f5ef; border-radius: 14px; border: 1px solid #ddd3c2; }
+.doc th, .doc td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #ddd3c2; vertical-align: top; }
+.doc th { background: #e3d8c5; font-weight: 600; }
+.doc tr:last-child td { border-bottom: 0; }
+</style>
+</head>
+<body class="bg-paper">
+<nav class="pv-bar" aria-label="Разделы превью">
+  <span>Сообща · превью</span>
+  <a href="#home">Главная</a>
+  <a href="#catalog">Каталог</a>
+  <a href="#concept">Концепция</a>
+  <a href="#plan">Технический план</a>
+</nav>
+<div class="pv-view" id="v-home"><div hidden=""><!--$--><!--/$--></div><!--&--><div class="bg-ink px-4 py-2 text-center text-[13px] text-surface">Прототип интерфейса: вход, создание и вступление в круги заработают на этапе разработки. Данные на страницах — демонстрационные.</div><header class="sticky top-0 z-30 border-b border-line/70 bg-paper/85 backdrop-blur-md"><div class="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-4 py-3 sm:px-5 md:px-8 md:py-4"><a aria-label="Сообща — на главную" href="#home"><span class="inline-flex items-center gap-2.5"><svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="13" cy="18" r="11" fill="#1E5C4A"></circle><circle cx="23" cy="18" r="11" fill="#EF7556" fill-opacity="0.85"></circle></svg><span class="font-display text-[21px] font-semibold tracking-[-0.04em]">сообща</span></span></a><nav aria-label="Основная навигация" class="hidden items-center gap-9 text-[15px] font-medium text-ink-2 lg:flex"><a class="hover:text-ink" href="#catalog">Круги</a><a class="hover:text-ink" href="#how">Как это работает</a><a class="hover:text-ink" href="#safety">Безопасность</a></nav><div class="flex items-center gap-2"><span class="hidden gap-2 sm:flex"><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 text-forest hover:bg-mint px-5 py-2.5 text-[15px] " href="#">Войти</a><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-forest text-surface hover:bg-forest-700 px-5 py-2.5 text-[15px] " href="#">Создать аккаунт</a></span><span class="sm:hidden"><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-forest text-surface hover:bg-forest-700 px-5 py-2.5 text-[15px] " href="#">Войти</a></span></div></div></header><main class="flex-1 overflow-x-clip"><section class="mx-auto grid max-w-[1280px] items-center gap-12 px-5 pt-10 pb-16 md:px-8 md:pt-16 lg:grid-cols-[1.2fr_1fr] lg:pb-24"><div class="flex flex-col gap-7"><span class="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink-2"><span class="size-2 rounded-full bg-coral" aria-hidden="true"></span>Маленькие группы · большая цель</span><h1 class="font-display text-[40px] leading-[1.05] font-medium tracking-[-0.045em] sm:text-[52px] lg:text-[56px] xl:text-[64px]">Одному трудно.<br/>Вместе — получится.</h1><p class="max-w-[560px] text-lg leading-[1.6] text-ink-2 md:text-xl">Соберитесь в круг из 3–8 человек вокруг одной цели и срока. Каждую неделю — короткий шаг и поддержка тех, кто идёт рядом. Без бесконечной ленты и гонки за лайками.</p><div class="flex flex-col gap-3 sm:flex-row"><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-forest text-surface hover:bg-forest-700 px-7 py-4 text-base " href="#catalog">Найти свой круг</a><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-surface text-ink border border-line hover:bg-sand/50 px-7 py-4 text-base " href="#">Собрать свой круг</a></div><div class="flex items-center gap-3.5"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-paper bg-coral-soft" style="width:34px;height:34px;font-size:13px" aria-hidden="true">А</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-paper bg-sun-soft" style="width:34px;height:34px;font-size:13px" aria-hidden="true">Д</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-paper bg-lilac-soft" style="width:34px;height:34px;font-size:13px" aria-hidden="true">Л</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-paper bg-mint" style="width:34px;height:34px;font-size:13px" aria-hidden="true">Т</span></span></span><span class="text-sm font-medium text-ink-3">Бесплатно · без телефона и адреса · закрыто по умолчанию</span></div></div><div class="relative mx-auto aspect-square w-full max-w-[520px]" aria-hidden="true"><div class="absolute top-[6%] left-[4%] size-[72%] rounded-full bg-mint"></div><div class="absolute top-[24%] left-[36%] size-[62%] rounded-full bg-coral-soft"></div><div class="absolute top-[58%] left-[22%] size-[36%] rounded-full bg-sun-soft"></div><span class="absolute left-[16%] top-[14%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgb(23_32_28/0.16)]"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:60px;height:60px;font-size:23px" aria-hidden="true">А</span></span><span class="absolute left-[64%] top-[8%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgb(23_32_28/0.16)]"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:60px;height:60px;font-size:23px" aria-hidden="true">М</span></span><span class="absolute left-[86%] top-[42%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgb(23_32_28/0.16)]"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:60px;height:60px;font-size:23px" aria-hidden="true">И</span></span><span class="absolute left-[10%] top-[58%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgb(23_32_28/0.16)]"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-surface" style="width:60px;height:60px;font-size:23px" aria-hidden="true">К</span></span><span class="absolute left-[44%] top-[88%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_10px_18px_rgb(23_32_28/0.16)]"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:60px;height:60px;font-size:23px" aria-hidden="true">Д</span></span><div class="absolute top-[34%] left-1/2 flex -translate-x-1/2 flex-col gap-3 rounded-3xl bg-surface p-5 whitespace-nowrap shadow-float sm:top-[30%] sm:left-[26%] sm:translate-x-0"><span class="font-display text-lg font-medium tracking-[-0.01em]">IELTS 7.0 к марту</span><span class="flex shrink-0 gap-1 w-40" role="img" aria-label="Пройдено недель: 2 из 6"><span class="h-2 flex-1 rounded-full bg-forest"></span><span class="h-2 flex-1 rounded-full bg-forest"></span><span class="h-2 flex-1 rounded-full bg-sun"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-sm font-medium text-ink-2">Неделя 3 из 6 · 5 участников</span></div><div class="absolute top-[62%] left-[42%] hidden items-center gap-3 whitespace-nowrap sm:flex rounded-[20px] bg-forest px-4 py-3.5 shadow-float"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-forest bg-sun-soft" style="width:32px;height:32px;font-size:12px" aria-hidden="true">М</span><span class="flex flex-col"><span class="text-sm font-semibold text-surface">Мария сделала шаг</span><span class="text-[13px] text-mint">Прошла 2 пробных теста</span></span></div><div class="absolute top-[78%] left-[70%] hidden items-center gap-2 whitespace-nowrap sm:flex rounded-full bg-surface px-3.5 py-2.5 text-sm font-medium shadow-float"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="text-coral"><path d="M12 20s-7-4.4-8.8-8.8C2 8 4 5 7 5c2 0 3.3 1 5 2.8C13.7 6 15 5 17 5c3 0 5 3 3.8 6.2C19 15.6 12 20 12 20z"></path></svg>Держись! · 3</div></div></section><section id="how" class="border-y border-line bg-surface/60"><div class="mx-auto max-w-[1280px] px-5 py-16 md:px-8 md:py-24"><p class="text-[13px] font-semibold tracking-[0.08em] text-forest uppercase">Как это работает</p><h2 class="mt-3 font-display text-[30px] leading-[1.15] font-medium tracking-[-0.04em] md:text-[44px]">Три шага до результата</h2><div class="mt-10 grid gap-4 md:grid-cols-3 md:gap-5"><div class="flex flex-col gap-4 rounded-[28px] p-7 md:p-8 bg-mint"><span class="font-display text-5xl font-medium tracking-[-0.04em] text-forest-700">01</span><h3 class="font-display text-[22px] font-medium tracking-[-0.01em]">Выберите цель</h3><p class="leading-[1.6] text-ink-2">Найдите круг по теме или соберите свой: цель, срок от 2 до 12 недель, до 8 человек.</p></div><div class="flex flex-col gap-4 rounded-[28px] p-7 md:p-8 bg-sun-soft"><span class="font-display text-5xl font-medium tracking-[-0.04em] text-ink">02</span><h3 class="font-display text-[22px] font-medium tracking-[-0.01em]">Делайте шаги</h3><p class="leading-[1.6] text-ink-2">Раз в неделю — короткий отчёт: что сделано, что мешает, что дальше. Это занимает 5 минут.</p></div><div class="flex flex-col gap-4 rounded-[28px] p-7 md:p-8 bg-coral-soft"><span class="font-display text-5xl font-medium tracking-[-0.04em] text-ink">03</span><h3 class="font-display text-[22px] font-medium tracking-[-0.01em]">Доведите до конца</h3><p class="leading-[1.6] text-ink-2">Поддерживайте друг друга, а в конце круга соберите итог — что получилось у каждого.</p></div></div></div></section><section class="mx-auto max-w-[1280px] px-5 py-16 md:px-8 md:py-24"><div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p class="text-[13px] font-semibold tracking-[0.08em] text-forest uppercase">Набирают участников</p><h2 class="mt-3 font-display text-[30px] leading-[1.15] font-medium tracking-[-0.04em] md:text-[44px]">Круги, которые стартуют скоро</h2></div><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-surface text-ink border border-line hover:bg-sand/50 px-5 py-2.5 text-[15px] w-fit" href="#catalog">Все круги →</a></div><div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-mint text-forest-700 ">Программирование</span><span class="text-[13px] font-medium text-ink-3">по заявке</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Python с нуля за 6 недель</h3><p class="text-[15px] leading-[1.55] text-ink-2">Разбираем основы, каждую неделю — маленький проект. Новичкам рады.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 6"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">6<!-- --> нед. · старт <!-- -->18 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">А</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">М</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">И</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">К</span></span></span><span class="text-sm font-medium">4<!-- --> из <!-- -->6<!-- --> · 2 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-lilac-soft text-ink ">Языки</span><span class="text-[13px] font-medium text-ink-3">открытый</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">IELTS 7.0 к марту</h3><p class="text-[15px] leading-[1.55] text-ink-2">Готовимся к экзамену: пробники по субботам, разбор эссе друг у друга.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 12"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">12<!-- --> нед. · старт <!-- -->25 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Д</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Л</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Т</span></span></span><span class="text-sm font-medium">3<!-- --> из <!-- -->5<!-- --> · 2 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-coral-soft text-ink ">Дизайн</span><span class="text-[13px] font-medium text-ink-3">по заявке</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Портфолио дизайнера</h3><p class="text-[15px] leading-[1.55] text-ink-2">Собираем 3 кейса для портфолио и даём честную обратную связь.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 8"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">8<!-- --> нед. · старт <!-- -->2 декабря</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">С</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Е</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Р</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">О</span></span></span><span class="text-sm font-medium">5<!-- --> из <!-- -->8<!-- --> · 3 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article></div></section><section id="safety" class="mx-auto max-w-[1280px] px-5 pb-16 md:px-8 md:pb-24"><div class="grid gap-10 rounded-[32px] bg-forest p-7 md:rounded-[40px] md:p-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:p-[72px]"><div class="flex flex-col gap-4"><p class="text-[13px] font-semibold tracking-[0.08em] text-sun uppercase">Безопасно по умолчанию</p><h2 class="font-display text-[30px] leading-[1.15] font-medium tracking-[-0.04em] text-surface md:text-[40px]">Ваши данные — только ваши</h2><p class="max-w-[480px] text-lg leading-[1.6] text-mint">Мы не спрашиваем телефон, адрес и дату рождения. Вы сами решаете, что показывать в профиле, а незнакомцы не могут написать вам в личку.</p></div><ul class="flex flex-col gap-3"><li class="flex items-start gap-4 rounded-[20px] bg-forest-700 p-4 md:p-5"><span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="flex flex-col gap-1"><span class="font-semibold text-surface">Без личных сообщений от незнакомцев</span><span class="text-sm leading-[1.5] text-mint">Общение — только внутри общего круга.</span></span></li><li class="flex items-start gap-4 rounded-[20px] bg-forest-700 p-4 md:p-5"><span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="flex flex-col gap-1"><span class="font-semibold text-surface">Закрыто по умолчанию</span><span class="text-sm leading-[1.5] text-mint">Каждое поле профиля видите только вы, пока сами не откроете.</span></span></li><li class="flex items-start gap-4 rounded-[20px] bg-forest-700 p-4 md:p-5"><span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="flex flex-col gap-1"><span class="font-semibold text-surface">Жалоба и блокировка в один тап</span><span class="text-sm leading-[1.5] text-mint">Контент сразу скрывается у вас, решение принимает модератор.</span></span></li><li class="flex items-start gap-4 rounded-[20px] bg-forest-700 p-4 md:p-5"><span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="flex flex-col gap-1"><span class="font-semibold text-surface">Свои уведомления</span><span class="text-sm leading-[1.5] text-mint">Вы выбираете, о чём и как сообщать. Никаких «вы давно не заходили».</span></span></li></ul></div></section></main><footer class="mt-auto border-t border-line"><div class="mx-auto flex max-w-[1280px] flex-col gap-4 px-5 py-8 text-sm text-ink-2 md:flex-row md:items-center md:justify-between md:px-8"><span class="text-ink-3">© 2026 Сообща</span><nav aria-label="Служебные ссылки" class="flex flex-wrap gap-x-7 gap-y-2"><span>Правила сообщества</span><span>Конфиденциальность</span><span>Связаться с нами</span></nav></div></footer><!--$--><!--/$--><!--/&--></div>
+<div class="pv-view" id="v-catalog"><div hidden=""><!--$--><!--/$--></div><!--&--><!--&--><div class="bg-ink px-4 py-2 text-center text-[13px] text-surface">Прототип интерфейса: вход, создание и вступление в круги заработают на этапе разработки. Данные на страницах — демонстрационные.</div><header class="sticky top-0 z-30 border-b border-line/70 bg-paper/85 backdrop-blur-md"><div class="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-4 py-3 sm:px-5 md:px-8 md:py-4"><a aria-label="Сообща — на главную" href="#home"><span class="inline-flex items-center gap-2.5"><svg width="34" height="34" viewBox="0 0 36 36" aria-hidden="true"><circle cx="13" cy="18" r="11" fill="#1E5C4A"></circle><circle cx="23" cy="18" r="11" fill="#EF7556" fill-opacity="0.85"></circle></svg><span class="font-display text-[21px] font-semibold tracking-[-0.04em]">сообща</span></span></a><nav aria-label="Основная навигация" class="hidden items-center gap-9 text-[15px] font-medium text-ink-2 lg:flex"><a class="hover:text-ink" href="#catalog">Круги</a><a class="hover:text-ink" href="#how">Как это работает</a><a class="hover:text-ink" href="#safety">Безопасность</a></nav><div class="flex items-center gap-2"><span class="hidden gap-2 sm:flex"><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 text-forest hover:bg-mint px-5 py-2.5 text-[15px] " href="#">Войти</a><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-forest text-surface hover:bg-forest-700 px-5 py-2.5 text-[15px] " href="#">Создать аккаунт</a></span><span class="sm:hidden"><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-forest text-surface hover:bg-forest-700 px-5 py-2.5 text-[15px] " href="#">Войти</a></span></div></div></header><main class="mx-auto w-full max-w-[1280px] flex-1 px-5 pt-8 pb-20 md:px-8 md:pt-12"><h1 class="font-display text-[30px] leading-[1.1] font-medium tracking-[-0.045em] md:text-[44px]">Найдите свой круг</h1><p class="mt-2.5 text-base text-ink-2 md:text-[17px]">5<!-- --> <!-- -->кругов набирают<!-- --> участников · выбирайте по теме, сроку и формату</p><div class="mt-7 flex gap-2.5 md:gap-3"><label class="flex min-h-12 flex-1 items-center gap-3 rounded-full border-[1.5px] border-line bg-surface px-5 focus-within:border-forest"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 text-ink-2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Поиск кругов</span><input type="search" placeholder="Python, английский, портфолио…" class="w-full bg-transparent py-3.5 text-base outline-none placeholder:text-ink-3"/></label><button type="button" class="flex min-h-12 items-center gap-2.5 rounded-full border-[1.5px] border-line bg-surface px-4 font-semibold md:px-5" aria-label="Фильтры"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"></path><circle cx="16" cy="6" r="2"></circle><circle cx="10" cy="12" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg><span class="hidden md:inline">Фильтры</span></button></div><div class="mt-5 flex items-center gap-3"><div class="no-scrollbar -mx-5 flex flex-1 gap-2 overflow-x-auto px-5 md:mx-0 md:flex-wrap md:px-0"><button type="button" class="shrink-0 rounded-full" aria-pressed="true"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-ink text-surface ">Все темы</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Программирование</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Языки</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Дизайн</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Экзамены</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Карьера</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Привычки</span></button><button type="button" class="shrink-0 rounded-full" aria-pressed="false"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap border border-line text-ink-2 bg-surface ">Локальные дела</span></button></div><div class="hidden shrink-0 gap-2 lg:flex"><button type="button" class="flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink-2">Срок: любой<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><button type="button" class="flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink-2">Есть места<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div></div><div class="mt-6 flex flex-col gap-4 rounded-3xl bg-lilac-soft p-5 sm:flex-row sm:items-center md:p-6"><span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-surface text-lilac"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"></path></svg></span><div class="flex-1"><p class="font-semibold">Подходит вашим интересам: Python, 3D-печать</p><p class="mt-1 text-sm text-ink-2">Подбор — простое совпадение тегов из профиля. Никаких скрытых алгоритмов.</p></div><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 bg-surface text-ink border border-line hover:bg-sand/50 px-5 py-2.5 text-[15px] w-fit" href="#">Показать 2 круга</a></div><div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6"><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-mint text-forest-700 ">Программирование</span><span class="text-[13px] font-medium text-ink-3">по заявке</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Python с нуля за 6 недель</h3><p class="text-[15px] leading-[1.55] text-ink-2">Разбираем основы, каждую неделю — маленький проект. Новичкам рады.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 6"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">6<!-- --> нед. · старт <!-- -->18 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">А</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">М</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">И</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">К</span></span></span><span class="text-sm font-medium">4<!-- --> из <!-- -->6<!-- --> · 2 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-lilac-soft text-ink ">Языки</span><span class="text-[13px] font-medium text-ink-3">открытый</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">IELTS 7.0 к марту</h3><p class="text-[15px] leading-[1.55] text-ink-2">Готовимся к экзамену: пробники по субботам, разбор эссе друг у друга.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 12"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">12<!-- --> нед. · старт <!-- -->25 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Д</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Л</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Т</span></span></span><span class="text-sm font-medium">3<!-- --> из <!-- -->5<!-- --> · 2 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-coral-soft text-ink ">Дизайн</span><span class="text-[13px] font-medium text-ink-3">по заявке</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Портфолио дизайнера</h3><p class="text-[15px] leading-[1.55] text-ink-2">Собираем 3 кейса для портфолио и даём честную обратную связь.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 8"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">8<!-- --> нед. · старт <!-- -->2 декабря</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">С</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Е</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Р</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">О</span></span></span><span class="text-sm font-medium">5<!-- --> из <!-- -->8<!-- --> · 3 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-sun-soft text-ink ">Привычки</span><span class="text-[13px] font-medium text-ink-3">открытый</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Бег: первые 10 км</h3><p class="text-[15px] leading-[1.55] text-ink-2">Тренируемся по плану, раз в неделю — отчёт и советы друг другу.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 10"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">10<!-- --> нед. · старт <!-- -->20 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Н</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-mint" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Г</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Ю</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">П</span></span></span><span class="text-sm font-medium">6<!-- --> из <!-- -->8<!-- --> · 2 места</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><article class="group relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap bg-mint text-forest-700 ">Локальные дела</span><span class="text-[13px] font-medium text-ink-3">по заявке</span></div><h3 class="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">Двор без мусора</h3><p class="text-[15px] leading-[1.55] text-ink-2">Наводим порядок во дворах: субботники и переговоры с управляющей компанией.</p><div class="flex items-center gap-3"><span class="flex shrink-0 gap-1 w-20" role="img" aria-label="Пройдено недель: 0 из 4"><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span><span class="h-2 flex-1 rounded-full bg-line"></span></span><span class="text-[13px] font-medium whitespace-nowrap text-ink-2">4<!-- --> нед. · старт <!-- -->23 ноября</span></div><div class="mt-auto flex items-center gap-3 border-t border-line pt-4"><span class="flex"><span class=""><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-sun-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">З</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-coral-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Х</span></span><span class="-ml-2.5"><span class="inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ring-surface bg-lilac-soft" style="width:36px;height:36px;font-size:14px" aria-hidden="true">Ц</span></span></span><span class="text-sm font-medium">3<!-- --> из <!-- -->8<!-- --> · 5 мест</span><span class="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-5-5m5 5-5 5"></path></svg></span></div></article><div class="flex flex-col justify-center gap-3.5 rounded-[28px] border-[1.5px] border-dashed border-forest/60 p-7"><span class="flex size-[52px] items-center justify-center rounded-full bg-forest text-surface"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><h2 class="font-display text-xl font-medium tracking-[-0.01em]">Не нашли подходящий?</h2><p class="text-[15px] leading-[1.55] text-ink-2">Соберите свой круг за 2 минуты: цель, срок и сколько человек нужно.</p><a class="inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50 text-forest hover:bg-mint px-5 py-2.5 text-[15px] w-fit -ml-5" href="#">Собрать круг →</a></div></div></main><footer class="mt-auto border-t border-line"><div class="mx-auto flex max-w-[1280px] flex-col gap-4 px-5 py-8 text-sm text-ink-2 md:flex-row md:items-center md:justify-between md:px-8"><span class="text-ink-3">© 2026 Сообща</span><nav aria-label="Служебные ссылки" class="flex flex-wrap gap-x-7 gap-y-2"><span>Правила сообщества</span><span>Конфиденциальность</span><span>Связаться с нами</span></nav></div></footer><!--$--><!--/$--><!--/&--><!--/&--></div>
+<div class="pv-view" id="v-concept"><article class="doc"><h1>«Сообща» — концепция продукта (этап 3, согласована с уточнениями)</h1>
+<h2>1. Название и позиционирование</h2>
+<p><strong>Сообща</strong> — место, где люди собираются в маленькие группы, чтобы вместе довести дело до конца.</p>
+<p>Слоган: <strong>«Одному трудно. Вместе — получится.»</strong></p>
+<p>Позиционирование: не соцсеть и не курс. Это «инструмент доведения до результата»:
+маленький круг людей, одна понятная цель, срок и взаимная поддержка.</p>
+<h2>2. Целевая аудитория</h2>
+<table>
+<thead>
+<tr>
+<th>Сегмент</th>
+<th>Пример цели</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Самообучающиеся (18–35)</td>
+<td>«Выучить основы Python за 6 недель»</td>
+</tr>
+<tr>
+<td>Готовящиеся к экзаменам</td>
+<td>«IELTS 7.0 к марту»</td>
+</tr>
+<tr>
+<td>Меняющие профессию</td>
+<td>«Собрать портфолио дизайнера за 2 месяца»</td>
+</tr>
+<tr>
+<td>Активные жители</td>
+<td>«Убрать берег пруда в сентябре»</td>
+</tr>
+<tr>
+<td>Люди, развивающие привычку/навык</td>
+<td>«Прочитать 4 книги по экономике за зиму»</td>
+</tr>
+</tbody>
+</table>
+<p>Старт (MVP): онлайн-круги по обучению и навыкам — их проще всего запустить без привязки к городу.</p>
+<h2>3. Ключевые понятия</h2>
+<ul>
+<li><strong>Круг</strong> — группа 3–8 человек с целью, сроком (2–12 недель) и ритмом встреч/отчётов.</li>
+<li><strong>Шаг</strong> — еженедельный отчёт участника: что сделал, что мешает, план на неделю.</li>
+<li><strong>Поддержка</strong> — реакция на шаг («держись», «полезно», «помогу») и комментарий.</li>
+<li><strong>Итог</strong> — страница завершения круга: что получилось у каждого, чему научились.</li>
+</ul>
+<h2>4. Основные функции MVP</h2>
+<p>Полный список версии 1 — в разделе 16. Кратко: регистрация, публичный профиль с настройкой видимости,
+каталог и поиск кругов, создание/вступление/выход, шаги и комментарии, жалобы и блокировка,
+уведомления в приложении с настройками.</p>
+<p>Чат круга, итоговая страница и достижения — версия 2.</p>
+<p><strong>Не входит в MVP</strong> (сознательно откладываем): видеозвонки, платные круги и наставники,
+мобильное приложение, личные сообщения между незнакомыми людьми, офлайн-встречи и карта.</p>
+<h2>5. Сценарии использования</h2>
+<p><strong>Анна хочет выучить Python.</strong> Ищет «python» → видит 3 круга → выбирает «Python с нуля, 6 недель,
+4/6 мест» → отправляет заявку → создатель принимает → Анна видит план и пишет первый шаг.</p>
+<p><strong>Игорь создаёт круг.</strong> «Создать круг» → цель «Подготовиться к IELTS 7.0», 8 недель, до 5 человек,
+по заявке → делится ссылкой с друзьями → принимает заявки → каждую неделю круг отчитывается.</p>
+<p><strong>Круг завершается.</strong> Через 8 недель появляется страница «Итог»: каждый отмечает результат,
+круг получает знак «Доведено до конца», участники могут собрать новый круг с той же командой.</p>
+<p><strong>Пользователь сталкивается со спамом.</strong> Нажимает «⋯ → Пожаловаться» на сообщение →
+выбирает причину → сообщение скрывается у него, жалоба уходит модератору; можно сразу заблокировать автора.</p>
+<h2>6. Регистрация и профили</h2>
+<p><strong>Регистрация</strong> — только email и пароль (или ссылка для входа). Подтверждение «мне есть 16 лет» без даты рождения.</p>
+<p><strong>Публичная часть профиля</strong> (всё заполняется по желанию, кроме никнейма):</p>
+<table>
+<thead>
+<tr>
+<th>Поле</th>
+<th>Пример</th>
+<th>Кто видит (выбирает пользователь)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Никнейм (уникальный, <code>@anna_learns</code>)</td>
+<td>обязателен</td>
+<td>всегда виден там, где вы участвуете</td>
+</tr>
+<tr>
+<td>Аватар</td>
+<td>картинка или цветная буква</td>
+<td>Все / Участники моих кругов / Только я</td>
+</tr>
+<tr>
+<td>Интересы</td>
+<td>Python, английский, экология</td>
+<td>Все / Участники моих кругов / Только я</td>
+</tr>
+<tr>
+<td>Навыки («умею»)</td>
+<td>Excel, монтаж видео</td>
+<td>Все / Участники моих кругов / Только я</td>
+</tr>
+<tr>
+<td>О себе</td>
+<td>до 300 символов</td>
+<td>Все / Участники моих кругов / Только я</td>
+</tr>
+<tr>
+<td>Город</td>
+<td>по желанию</td>
+<td>Все / Участники моих кругов / Только я</td>
+</tr>
+</tbody>
+</table>
+<p>По умолчанию всё, кроме никнейма, видите <strong>только вы</strong> («Только я»). Открыть поле — осознанный выбор пользователя.</p>
+<p><strong>Не собираем вообще</strong>: телефон, адрес, дату рождения, пол, документы, ссылки на соцсети, мессенджеры.
+Email нужен только для входа и никогда не показывается другим.</p>
+<h2>7. Общение (безопасная модель)</h2>
+<ul>
+<li><strong>Нет открытых личных сообщений.</strong> Написать человеку можно только внутри общего круга.</li>
+<li><strong>Нет полей для контактов</strong> в профиле. Если в тексте шага или комментария похоже на телефон/email/ссылку
+  на мессенджер — показываем мягкое предупреждение «Не публикуйте контакты: общайтесь внутри круга».</li>
+<li>Шаги + комментарии — основной канал, спокойный и асинхронный.</li>
+<li>Чат круга — во 2-й версии; видят только участники.</li>
+<li>Ограничения частоты действий, для новых аккаунтов — строже.</li>
+</ul>
+<h3>Выход, жалобы, блокировка</h3>
+<ul>
+<li><strong>Выйти из круга</strong> можно в любой момент (необязательная причина). Если выходит создатель — роль переходит
+  самому давнему участнику, а если участников нет — круг закрывается.</li>
+<li><strong>Пожаловаться</strong> можно на публикацию (шаг, комментарий) и на участника. Причины: спам, оскорбления,
+  мошенничество, неприемлемый контент, публикация чужих данных, другое.
+  После жалобы контент сразу скрывается у того, кто пожаловался.</li>
+<li><strong>Заблокировать</strong> пользователя: он не видит ваш профиль и публикации, не может отвечать вам
+  и вступать в ваши круги; вы перестаёте видеть его. Список блокировок — в настройках, можно снять.</li>
+<li><strong>Создатель круга</strong> может удалить участника из круга.</li>
+</ul>
+<h2>8. Сообщества и группы</h2>
+<p>Круг и есть группа. В будущем — <strong>«Пространства»</strong>: объединения кругов вокруг темы или организации
+(например, онлайн-школа запускает 20 кругов своих студентов). Это основа для B2B-монетизации.</p>
+<h2>9. Поиск людей по интересам</h2>
+<ul>
+<li>Поиск кругов (основной) — по теме, тегам, сроку, языку, наличию мест.</li>
+<li>Подбор: «Круги для вас» на основе поля «хочу научиться» — простое совпадение тегов, без скрытых алгоритмов.</li>
+<li>Поиск людей напрямую — только по тем, кто открыл профиль для всех.</li>
+</ul>
+<h2>10. Совместные проекты</h2>
+<p>Каждый круг — это совместный проект с целью и сроком. В MVP: общая цель, личные цели участников,
+еженедельные шаги и итог. Позже — общий список задач круга (для локальных инициатив).</p>
+<h2>11. Уведомления (пользователь сам выбирает)</h2>
+<p>Экран «Настройки → Уведомления»: для каждого типа — переключатель «В приложении» и «На почту».</p>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>В приложении (по умолчанию)</th>
+<th>На почту (по умолчанию)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Заявка в мой круг / ответ на мою заявку</td>
+<td>вкл</td>
+<td>вкл</td>
+</tr>
+<tr>
+<td>Ответ на мой шаг или комментарий</td>
+<td>вкл</td>
+<td>выкл</td>
+</tr>
+<tr>
+<td>Новый шаг в моём круге</td>
+<td>выкл</td>
+<td>выкл</td>
+</tr>
+<tr>
+<td>Напоминание о дне шага</td>
+<td>вкл</td>
+<td>выкл</td>
+</tr>
+<tr>
+<td>Круг завершается / итог</td>
+<td>вкл</td>
+<td>выкл</td>
+</tr>
+<tr>
+<td>Новости «Сообща»</td>
+<td>выкл</td>
+<td>выкл</td>
+</tr>
+</tbody>
+</table>
+<p>Плюс: «тихие часы», «сводка раз в день вместо отдельных писем», «выключить всё».
+Никогда: «вы давно не заходили», счётчики-приманки, тёмные паттерны отписки.</p>
+<h2>12. Система достижений (за результат, не за время)</h2>
+<table>
+<thead>
+<tr>
+<th>Знак</th>
+<th>За что</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Первый шаг</td>
+<td>Опубликован первый отчёт</td>
+</tr>
+<tr>
+<td>Доведено до конца</td>
+<td>Завершён круг (отмечен итог)</td>
+</tr>
+<tr>
+<td>Опора</td>
+<td>10 полезных комментариев, отмеченных другими</td>
+</tr>
+<tr>
+<td>Собиратель</td>
+<td>Создан круг, который дошёл до конца</td>
+</tr>
+<tr>
+<td>Наставник на шаг</td>
+<td>Помог новичку (отметка от участника)</td>
+</tr>
+</tbody>
+</table>
+<p>Нет: «серий» дней подряд, рейтингов «кто больше», очков за вход.</p>
+<h2>13. Безопасность и модерация</h2>
+<ul>
+<li><strong>Жалобы</strong> на пользователя, круг, шаг, комментарий, сообщение — с причиной.</li>
+<li><strong>Блокировка</strong>: заблокированный не видит ваш профиль и шаги, не может писать вам и вступать в ваши круги.</li>
+<li><strong>Модерация</strong>: роль модератора, очередь жалоб, скрытие контента, бан. Создатель круга может удалить участника.</li>
+<li><strong>Антиспам</strong>: ограничение частоты, лимиты для новых аккаунтов, запрет ссылок в первые часы, проверка вводимых данных.</li>
+<li><strong>Данные</strong>: RLS в базе (каждый видит только то, что ему разрешено), HTTPS, пароли хранит Supabase Auth.</li>
+<li><strong>Права пользователя</strong>: выгрузить свои данные, удалить аккаунт.</li>
+<li>Правила сообщества — короткие и понятные, показываются при создании круга.</li>
+</ul>
+<h2>14. Как сделать интересным без манипуляций</h2>
+<ul>
+<li>Естественный повод вернуться — свой круг и его ритм, а не уведомления-крючки.</li>
+<li>У каждого круга есть конец — приложение не стремится удерживать бесконечно.</li>
+<li>Прогресс виден наглядно: недели, шаги, итог.</li>
+<li>Тёплые формулировки и поддержка вместо соревнования.</li>
+</ul>
+<h2>15. Монетизация (позже, не в MVP)</h2>
+<ol>
+<li>«Пространства» для онлайн-школ, вузов, компаний — платная подписка.</li>
+<li>Круги с наставником — комиссия платформы.</li>
+<li>Расширенные функции для создателей кругов (шаблоны, аналитика своего круга).</li>
+</ol>
+<p>Базовое использование для людей — бесплатно.</p>
+<h2>16. Этапы разработки</h2>
+<p><strong>Версия 1 — основной функционал (MVP).</strong> Сначала делаем качественно и проверяем.
+1. Регистрация, вход, выход, восстановление пароля.
+2. Профиль: никнейм, аватар, интересы, навыки, о себе, город + видимость каждого поля.
+3. Каталог кругов и поиск (тема, теги, срок, свободные места).
+4. Создание круга, заявка/вступление, <strong>выход из круга</strong>, удаление участника создателем.
+5. Страница круга: участники, недели, шаги, комментарии.
+6. <strong>Жалобы</strong> на публикацию и участника, <strong>блокировка</strong>, простая очередь модерации.
+7. Уведомления в приложении + <strong>настройки уведомлений</strong>.
+8. Защита: RLS, ограничение частоты, проверка ввода, предупреждение о контактах.
+9. Адаптивность (телефон / планшет / компьютер) и тесты Playwright на всё перечисленное.</p>
+<p><strong>Версия 2 — после проверки первой версии.</strong>
+Чат круга, итоговая страница и достижения, письма на почту, вход через Google, загрузка фото в шаги,
+расширенная модерация.</p>
+<p><strong>Версия 3 — развитие.</strong>
+«Пространства» для школ и компаний, круги с наставником, локальные инициативы со списком задач, монетизация.</p></article></div>
+<div class="pv-view" id="v-plan"><article class="doc"><h1>«Сообща» — технический план MVP (версия 1)</h1>
+<p>Статус: <strong>на согласовании</strong>. Реализацию начинаем после «ок» владельца.</p>
+<hr />
+<h2>1. Архитектура простыми словами</h2>
+<pre><code> Телефон / компьютер (браузер)
+          │
+          ▼
+ ┌─────────────────────────────┐
+ │  Next.js (сайт + сервер)    │  ← страницы, формы, проверка данных
+ │  хостинг: Vercel (Hobby)    │
+ └──────────────┬──────────────┘
+                │ защищённое соединение
+                ▼
+ ┌─────────────────────────────┐
+ │  Supabase                   │
+ │  • Postgres — база данных   │  ← RLS: база сама проверяет, кому что можно
+ │  • Auth — вход и пароли     │
+ │  • Storage — файлы (v2)     │
+ └─────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Отдельного «бэкенда» нет.</strong> Next.js сам и показывает страницы, и обрабатывает формы
+  (Server Components — чтение, Server Actions — изменения). Это меньше кода и меньше мест для ошибок.</li>
+<li><strong>Главная защита — в базе (RLS, Row Level Security).</strong> Даже если в коде страницы ошибка,
+  база не отдаст чужие данные: каждое правило «кто что может видеть и менять» записано прямо в Postgres.</li>
+<li><strong>Проверка ввода — Zod</strong> (библиотека схем): длина текстов, допустимые значения, без лишних полей.</li>
+<li><strong>Шрифты — свои, без Google</strong> (<code>@fontsource</code>), чтобы не передавать третьим лицам данные посетителей.</li>
+</ul>
+<h3>Технологии</h3>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Выбор</th>
+<th>Почему</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Интерфейс</td>
+<td>Next.js 16 (App Router) + React 19 + TypeScript</td>
+<td>современно, одна кодовая база для сайта и сервера</td>
+</tr>
+<tr>
+<td>Стили</td>
+<td>Tailwind CSS 4 + токены из дизайна</td>
+<td>быстрые адаптивные экраны, единый стиль</td>
+</tr>
+<tr>
+<td>База и вход</td>
+<td>Supabase (Postgres + Auth) через <code>@supabase/ssr</code></td>
+<td>бесплатный тариф, готовая авторизация, RLS</td>
+</tr>
+<tr>
+<td>Проверка данных</td>
+<td>Zod</td>
+<td>одинаковые правила на клиенте и сервере</td>
+</tr>
+<tr>
+<td>Тесты</td>
+<td>Playwright (e2e, телефон + компьютер), Vitest (мелкие функции)</td>
+<td>проверка реальных сценариев</td>
+</tr>
+<tr>
+<td>CI</td>
+<td>GitHub Actions</td>
+<td>автопроверка каждого изменения</td>
+</tr>
+<tr>
+<td>Хостинг</td>
+<td>Vercel Hobby</td>
+<td>бесплатно; публикация — только с вашего согласия</td>
+</tr>
+</tbody>
+</table>
+<h3>Бесплатные тарифы и их ограничения (важно знать заранее)</h3>
+<ul>
+<li><strong>Supabase Free:</strong> до 2 проектов, база 500 МБ — для MVP с запасом. Проект «засыпает» после 7 дней без активности
+  (будится одной кнопкой). Встроенная отправка писем (подтверждение email, сброс пароля) ограничена
+  несколькими письмами в час — для тестов хватит; для реальных пользователей позже понадобится почтовый сервис
+  (у многих есть бесплатный уровень, подключим только с вашего согласия).</li>
+<li><strong>Vercel Hobby:</strong> бесплатно, но по правилам — для личных, некоммерческих проектов. Для теста MVP подходит;
+  при запуске коммерции нужен будет платный тариф (решение — ваше).</li>
+</ul>
+<hr />
+<h2>2. Структура страниц</h2>
+<h3>Публичные (без входа)</h3>
+<table>
+<thead>
+<tr>
+<th>Адрес</th>
+<th>Что там</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Главная</td>
+</tr>
+<tr>
+<td><code>/circles</code></td>
+<td>Каталог кругов. Гостям — только название, цель, тема, срок и число мест (без имён и аватаров участников)</td>
+</tr>
+<tr>
+<td><code>/signup</code>, <code>/login</code></td>
+<td>Регистрация и вход (email + пароль)</td>
+</tr>
+<tr>
+<td><code>/reset-password</code></td>
+<td>Восстановление пароля</td>
+</tr>
+<tr>
+<td><code>/rules</code>, <code>/privacy</code></td>
+<td>Правила сообщества, политика конфиденциальности</td>
+</tr>
+</tbody>
+</table>
+<h3>После входа</h3>
+<table>
+<thead>
+<tr>
+<th>Адрес</th>
+<th>Что там</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/onboarding</code></td>
+<td>Первый вход: никнейм, подтверждение «мне есть 16», интересы (по желанию)</td>
+</tr>
+<tr>
+<td><code>/home</code></td>
+<td><strong>Мои круги</strong> + мои заявки</td>
+</tr>
+<tr>
+<td><code>/circles/new</code></td>
+<td>Создание круга (пошагово: цель → срок и размер → формат вступления → проверка)</td>
+</tr>
+<tr>
+<td><code>/circles/[id]</code></td>
+<td>Страница круга: вкладки «Шаги», «Участники», «О круге»</td>
+</tr>
+<tr>
+<td><code>/circles/[id]/requests</code></td>
+<td>Заявки на вступление (только создатель)</td>
+</tr>
+<tr>
+<td><code>/circles/[id]/settings</code></td>
+<td>Настройки круга (только создатель)</td>
+</tr>
+<tr>
+<td><code>/u/[nickname]</code></td>
+<td>Профиль участника (только разрешённые поля)</td>
+</tr>
+<tr>
+<td><code>/notifications</code></td>
+<td>Уведомления</td>
+</tr>
+<tr>
+<td><code>/settings/profile</code></td>
+<td>Мой профиль и видимость каждого поля</td>
+</tr>
+<tr>
+<td><code>/settings/notifications</code></td>
+<td>Настройки уведомлений</td>
+</tr>
+<tr>
+<td><code>/settings/privacy</code></td>
+<td>Список заблокированных</td>
+</tr>
+<tr>
+<td><code>/settings/account</code></td>
+<td>Email, пароль, выгрузка данных, удаление аккаунта</td>
+</tr>
+<tr>
+<td><code>/moderation</code></td>
+<td>Очередь жалоб (только модератор)</td>
+</tr>
+</tbody>
+</table>
+<h3>Мобильная версия — полноценная, а не уменьшенная</h3>
+<ul>
+<li><strong>Внизу — панель вкладок:</strong> «Мои круги», «Найти», «Уведомления», «Профиль». Большие зоны нажатия (≥ 44 px), учёт «чёлки» и нижней полосы iPhone.</li>
+<li><strong>Действия — нижние шторки</strong> (меню круга, жалоба, выход) вместо мелких выпадающих меню; на компьютере те же действия — в диалогах.</li>
+<li><strong>Формы — по одному шагу на экран</strong> (создание круга), правильные типы клавиатуры (<code>email</code>, <code>search</code>).</li>
+<li>Темы и фильтры — горизонтальная прокрутка; кнопка «Написать шаг» всегда под пальцем.</li>
+<li>Проверяем на ширине <strong>320 px</strong> (самые маленькие телефоны) — это уже в автотестах.</li>
+</ul>
+<hr />
+<h2>3. Компоненты интерфейса</h2>
+<p><strong>Базовые (уже есть в прототипе):</strong> <code>Button</code>, <code>Chip</code>, <code>Avatar</code>, <code>AvatarStack</code>, <code>WeekBar</code>, <code>Logo</code>, <code>CircleCard</code>.</p>
+<p><strong>Добавим в версии 1:</strong>
+- Формы: <code>TextField</code>, <code>TextArea</code> (со счётчиком символов), <code>Select</code>, <code>TagInput</code> (интересы/навыки), <code>Toggle</code>, <code>RadioGroup</code>, <code>VisibilityPicker</code> («Только я / Мои круги / Все»).
+- Каркас: <code>AppShell</code> (шапка на компьютере, панель вкладок на телефоне), <code>PageHeader</code>, <code>BottomSheet</code>/<code>Dialog</code>, <code>Toast</code> (короткие сообщения «Сохранено»).
+- Круг: <code>CircleHeader</code> (прогресс недель, участники), <code>StepComposer</code>, <code>StepCard</code>, <code>CommentList</code>, <code>ReactionBar</code>, <code>MemberList</code>, <code>JoinRequestCard</code>.
+- Безопасность: <code>ReportSheet</code>, <code>BlockConfirm</code>, <code>LeaveCircleDialog</code>, <code>ContactWarning</code> (подсказка «не публикуйте контакты»).
+- Состояния: <code>EmptyState</code> (иконка, заголовок, пояснение, действие), <code>ErrorState</code>, <code>Skeleton</code> (заглушки при загрузке).</p>
+<hr />
+<h2>4. Модель данных</h2>
+<p>Обозначения: <code>PK</code> — уникальный ключ, <code>→</code> — ссылка на другую таблицу. Все таблицы — с включённым <strong>RLS</strong>.</p>
+<h3>Пользователи</h3>
+<p><strong>profiles</strong> — профиль (1 к 1 с аккаунтом Supabase Auth)
+| Поле | Тип | Примечание |
+|---|---|---|
+| id | uuid PK → auth.users | |
+| nickname | citext, уникальный | 3–20 символов: латиница, цифры, <code>_</code> |
+| avatar_tone | enum | цвет буквы-аватара (фото — в v2) |
+| about | text ≤ 300 | |
+| city | text ≤ 60, необязательно | |
+| interests, skills | text[] | до 10 тегов каждого вида |
+| vis_avatar, vis_about, vis_city, vis_interests, vis_skills | enum <code>private / circles / public</code> | <strong>по умолчанию <code>private</code></strong> |
+| role | enum <code>user / moderator / admin</code> | |
+| age_confirmed_at | timestamptz | галочка «мне есть 16» |
+| created_at | timestamptz | |</p>
+<p>Никнейм виден участникам ваших кругов и создателю круга, куда вы подали заявку. Email хранится только в Supabase Auth и <strong>никогда</strong> не попадает в публичные запросы.
+<code>public</code> = «все вошедшие пользователи»; гостям без входа профили не показываются вообще.</p>
+<h3>Круги</h3>
+<p><strong>circles</strong>: id, owner_id → profiles, title (≤ 80), goal (≤ 200), description (≤ 1000), topic (enum), tags text[],
+capacity (3–8), weeks (2–12), start_date, join_mode <code>open / approval</code>, listing <code>listed / unlisted</code> (по ссылке),
+status <code>recruiting / active / finished / closed</code>, created_at.</p>
+<p><strong>circle_members</strong>: (circle_id, user_id) PK, role <code>owner / member</code>, joined_at.
+При выходе запись удаляется, шаги остаются (автор показывается как «бывший участник»).
+Если выходит создатель — роль переходит самому давнему участнику; если никого нет — круг закрывается.</p>
+<p><strong>join_requests</strong>: id, circle_id, user_id, message (≤ 300), status <code>pending / approved / rejected / withdrawn / expired</code>,
+decided_by, decided_at, created_at. Одна активная заявка на человека и круг.</p>
+<h3>Общение</h3>
+<p><strong>steps</strong> (шаги недели): id, circle_id, author_id, week_no, body (≤ 2000), status <code>visible / under_review / removed</code>, created_at, edited_at.
+<strong>comments</strong>: id, step_id, author_id, body (≤ 1000), status, created_at.
+<strong>reactions</strong>: (step_id, user_id, kind) PK, kind <code>support / useful</code>.</p>
+<h3>Безопасность</h3>
+<p><strong>blocks</strong>: (blocker_id, blocked_id) PK, created_at.
+<strong>reports</strong>: id, reporter_id, target_type <code>step / comment / user / circle</code>, target_id, reason (enum), details (≤ 500),
+status <code>open / actioned / dismissed</code>, weight, created_at, resolved_by, resolved_at. Уникально: (reporter, target).
+<strong>moderation_actions</strong> (журнал): id, moderator_id, action, target_type, target_id, reason, created_at.
+<strong>action_log</strong> (для ограничения частоты): user_id, action, created_at.</p>
+<h3>Уведомления</h3>
+<p><strong>notifications</strong>: id, user_id, type, data (jsonb — только id объектов, без текста чужих сообщений), read_at, created_at.
+<strong>notification_settings</strong>: user_id PK, prefs (jsonb: тип → в приложении / на почту), quiet_from, quiet_to, daily_digest, all_off.</p>
+<h3>Ключевые правила доступа (RLS)</h3>
+<ul>
+<li>Шаги, комментарии и список участников видят <strong>только участники круга</strong>.</li>
+<li>Писать шаги и комментарии могут только текущие участники; менять — только автор.</li>
+<li>Поля профиля отдаются через функцию, которая учитывает видимость поля, общие круги и блокировки.</li>
+<li>Заблокированные взаимно не видят профили и публикации друг друга и не могут вступить в круги друг друга.</li>
+<li>Заявки видят только их автор и создатель круга.</li>
+<li>Жалобы видит только автор жалобы (свои) и модераторы.</li>
+</ul>
+<hr />
+<h2>5. Защита от злоупотребления жалобами</h2>
+<p>Жалоба <strong>никогда не удаляет контент автоматически</strong>.</p>
+<ol>
+<li><strong>Сразу после жалобы</strong> публикация скрывается <strong>только у того, кто пожаловался</strong>. У остальных всё по-прежнему.</li>
+<li><strong>Временное скрытие «на проверке»</strong> (не удаление) для всех включается, только если:</li>
+<li>пришло <strong>3 жалобы от разных людей</strong>,</li>
+<li>их аккаунтам больше 7 дней, и это участники того же круга,</li>
+<li>этих людей нет среди тех, чьи жалобы часто отклоняются.
+   Автор видит пометку «на проверке» и продолжает видеть свою публикацию.</li>
+<li><strong>Решение принимает модератор:</strong> вернуть публикацию или удалить. Каждое решение пишется в журнал.</li>
+<li><strong>Против «ковровых» жалоб:</strong> не больше 10 жалоб в сутки на человека; на один объект — одна жалоба от одного человека.
+   Если жалобы человека систематически отклоняются, их «вес» снижается и они перестают влиять на шаг 2
+   (модератор их всё равно видит).</li>
+<li><strong>Создателя круга нельзя «выжить» жалобами</strong> — его контент уходит только в очередь модератора.</li>
+<li>Автор жалобы остаётся анонимным для того, на кого пожаловались.</li>
+</ol>
+<h2>6. Одобрение новых участников</h2>
+<ul>
+<li>У круга два режима вступления: <strong>«Открытый»</strong> (сразу, пока есть места) и <strong>«По заявке»</strong> (по умолчанию).</li>
+<li>Заявка: необязательное сообщение до 300 символов. Если в нём похоже на контакты, показываем предупреждение.</li>
+<li>Создатель видит: никнейм, сообщение, поля профиля с видимостью «Все» и сколько кругов человек довёл до конца.
+  Закрытые поля создатель не видит — приватность не нарушается ради заявки.</li>
+<li>Кнопки «Принять» и «Отклонить» (причина по желанию, из готовых вариантов). Если мест нет, принять нельзя.</li>
+<li>Заявки старше 14 дней автоматически получают статус «истекла». Человек может отозвать свою заявку.</li>
+<li>Обе стороны получают уведомление (если включено в настройках).</li>
+</ul>
+<h2>7. Пустые состояния</h2>
+<table>
+<thead>
+<tr>
+<th>Где</th>
+<th>Что показываем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Каталог — кругов нет</td>
+<td>«Пока здесь тихо» + «Соберите первый круг»</td>
+</tr>
+<tr>
+<td>Каталог — по фильтру ничего</td>
+<td>«Ничего не нашли по „…“» + «Сбросить фильтры» / «Собрать такой круг»</td>
+</tr>
+<tr>
+<td>Мои круги</td>
+<td>«Вы пока ни в одном круге» + «Найти круг» / «Собрать свой»</td>
+</tr>
+<tr>
+<td>Мои заявки</td>
+<td>«Заявок нет» (без действия)</td>
+</tr>
+<tr>
+<td>Профиль — пусто</td>
+<td>Подсказка, что можно заполнить, и напоминание: «Всё закрыто, пока вы сами не откроете»</td>
+</tr>
+<tr>
+<td>Уведомления</td>
+<td>«Тихо — и это нормально. Мы пишем только о важном» + ссылка на настройки</td>
+</tr>
+<tr>
+<td>Шаги в круге</td>
+<td>«На этой неделе шагов ещё нет. Будьте первым» + кнопка «Написать шаг»</td>
+</tr>
+<tr>
+<td>Заявки (создатель)</td>
+<td>«Новых заявок нет»</td>
+</tr>
+<tr>
+<td>Заблокированные</td>
+<td>«Вы никого не блокировали»</td>
+</tr>
+<tr>
+<td>Модерация</td>
+<td>«Очередь пуста»</td>
+</tr>
+</tbody>
+</table>
+<p>Плюс состояния ошибок («Не получилось загрузить. Повторить») и загрузки (заглушки-скелеты).</p>
+<h2>8. Контраст и маленькие экраны</h2>
+<p>Проверено по WCAG 2.1 (норма для обычного текста — 4,5 : 1):</p>
+<table>
+<thead>
+<tr>
+<th>Текст / фон</th>
+<th>Контраст</th>
+<th>Итог</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Основной текст <code>#17201C</code> на фоне <code>#EDE5D7</code></td>
+<td>13,3</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Вторичный <code>#4A544F</code> на фоне</td>
+<td>6,3</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Подсказки <code>#6B6559</code> на фоне / на карточке</td>
+<td>4,6 / 5,3</td>
+<td>✅ (было 2,5 — исправлено)</td>
+</tr>
+<tr>
+<td>Лесной <code>#1E5C4A</code> на фоне</td>
+<td>6,3</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Белый текст на лесной кнопке</td>
+<td>7,8</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Красный <code>#B23A26</code> на фоне / белый на красном</td>
+<td>4,8 / 6,0</td>
+<td>✅ (было 3,9 — исправлено)</td>
+</tr>
+<tr>
+<td>Белый на коралловом</td>
+<td>2,9</td>
+<td>❌ → на коралловом только тёмный текст (5,8)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Коралловый, жёлтый и сиреневый — только для фона и украшений, не для мелкого текста.</li>
+<li>Карточки почти не отличаются от фона по яркости (1,15), поэтому у них <strong>обводка + мягкая тень</strong>,
+  а секции различаются светлыми полосами и цветными плашками.</li>
+<li>Минимальная ширина — 320 px, без горизонтальной прокрутки (проверяется автотестом), зоны нажатия от 44 px,
+  видимая рамка фокуса для клавиатуры, размер текста от 12 px только для второстепенных подписей.</li>
+</ul>
+<hr />
+<h2>9. Что работает в версии 1, а что откладываем</h2>
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Версия 1</th>
+<th>Позже</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Регистрация, вход, сброс пароля</td>
+<td>✅ email + пароль</td>
+<td>вход через Google — v2</td>
+</tr>
+<tr>
+<td>Профиль: никнейм, буква-аватар, о себе, город, интересы, навыки</td>
+<td>✅ + видимость каждого поля</td>
+<td>фото-аватар — v2</td>
+</tr>
+<tr>
+<td>Каталог, поиск, фильтры (тема, срок, места)</td>
+<td>✅</td>
+<td>подбор «для вас» по тегам — v1.1</td>
+</tr>
+<tr>
+<td>Создание круга, открытый / по заявке</td>
+<td>✅</td>
+<td>шаблоны кругов — v3</td>
+</tr>
+<tr>
+<td>Одобрение заявок создателем</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Выход из круга, удаление участника создателем</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Шаги, комментарии, реакции «Держись» / «Полезно»</td>
+<td>✅</td>
+<td>фото в шагах — v2</td>
+</tr>
+<tr>
+<td>Блокировка, жалобы, очередь модерации</td>
+<td>✅</td>
+<td>апелляции — v2</td>
+</tr>
+<tr>
+<td>Предупреждение о контактах в тексте</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Уведомления в приложении + настройки</td>
+<td>✅</td>
+<td>письма на почту и дневная сводка — v2</td>
+</tr>
+<tr>
+<td>Выгрузка данных и удаление аккаунта</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Чат круга</td>
+<td>—</td>
+<td>v2</td>
+</tr>
+<tr>
+<td>Итог круга и достижения</td>
+<td>—</td>
+<td>v2</td>
+</tr>
+<tr>
+<td>«Пространства», наставники, оплата</td>
+<td>—</td>
+<td>v3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. Последовательность разработки</h2>
+<p>Каждый этап заканчивается автотестами, проверкой на телефоне и коротким отчётом вам.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Этап</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>✅ Дизайн и прототип главной и каталога</td>
+<td>сделано</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>Основа:</strong> проект Supabase, схема базы + RLS, вход/регистрация, каркас приложения (вкладки на телефоне)</td>
+<td>можно зарегистрироваться и войти</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Профиль:</strong> онбординг, редактирование, видимость полей, страница участника</td>
+<td>профиль с приватностью по умолчанию</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Круги:</strong> создание, каталог из базы, вступление, заявки и одобрение, выход</td>
+<td>круг можно собрать и наполнить</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Шаги:</strong> публикация, комментарии, реакции, недели</td>
+<td>круг «живёт»</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Безопасность:</strong> блокировки, жалобы, модерация, ограничение частоты, предупреждение о контактах</td>
+<td>защита от спама и злоупотреблений</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Уведомления:</strong> список, отметка «прочитано», настройки</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Шлифовка:</strong> пустые состояния, ошибки, доступность, выгрузка и удаление аккаунта, правила и политика</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Проверка:</strong> полный прогон тестов, обзор безопасности</td>
+<td>готово к тестовой публикации (с вашего согласия)</td>
+</tr>
+</tbody>
+</table>
+<h3>Что понадобится от вас</h3>
+<ul>
+<li><strong>Перед этапом 1</strong> — согласие создать <strong>бесплатный</strong> проект Supabase <code>soobsha-dev</code> в вашей организации.
+  Стоимость 0 ₽; данные — только тестовые.</li>
+<li><strong>Перед публикацией</strong> — отдельное согласие на проект в Vercel (бесплатный тариф Hobby).</li>
+</ul></article></div>
+<script>
+(function () {
+  var views = { home: 1, catalog: 1, concept: 1, plan: 1 };
+  function show() {
+    var h = (location.hash || "#home").slice(1);
+    var view = views[h] ? h : "home";
+    document.querySelectorAll(".pv-view").forEach(function (v) { v.classList.toggle("on", v.id === "v-" + view); });
+    document.querySelectorAll(".pv-bar a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    var target = !views[h] && h ? document.getElementById(h) : null;
+    if (target) target.scrollIntoView({ behavior: "smooth" }); else window.scrollTo(0, 0);
+  }
+  // Кнопки прототипа, которые пока никуда не ведут
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href="#"]');
+    if (a) { e.preventDefault(); }
+  });
+  window.addEventListener("hashchange", show);
+  show();
+})();
+</script>
+</body>
+</html>
