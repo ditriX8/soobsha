@@ -1,23 +1,25 @@
-import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
 /* ---------- Кнопка ---------- */
 
-type ButtonVariant = "primary" | "secondary" | "accent" | "ghost";
-type ButtonSize = "md" | "lg";
+export type ButtonVariant = "primary" | "secondary" | "accent" | "ghost" | "danger" | "dangerSoft";
+type ButtonSize = "sm" | "md" | "lg";
 
 const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50";
 
 const buttonVariants: Record<ButtonVariant, string> = {
   primary: "bg-forest text-surface hover:bg-forest-700",
-  secondary: "bg-surface text-ink border border-line hover:bg-sand/50",
+  secondary: "bg-surface text-ink border border-line hover:bg-sand/60",
   // На коралловом фоне — тёмный текст: белый не проходит по контрасту.
   accent: "bg-coral text-ink hover:brightness-95",
   ghost: "text-forest hover:bg-mint",
+  danger: "bg-danger text-surface hover:brightness-95",
+  dangerSoft: "bg-coral-soft text-danger hover:brightness-95",
 };
 
 const buttonSizes: Record<ButtonSize, string> = {
+  sm: "px-4 py-2 text-sm min-h-10",
   md: "px-5 py-2.5 text-[15px]",
   lg: "px-7 py-4 text-base",
 };
@@ -26,13 +28,44 @@ export function buttonClass(variant: ButtonVariant = "primary", size: ButtonSize
   return `${buttonBase} ${buttonVariants[variant]} ${buttonSizes[size]}`;
 }
 
+export function Button({
+  variant,
+  size,
+  className = "",
+  type = "button",
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant; size?: ButtonSize }) {
+  return <button type={type} className={`${buttonClass(variant, size)} ${className}`} {...props} />;
+}
+
+/** Ссылка, выглядящая как кнопка. Навигация — по якорю (#catalog и т. п.). */
 export function ButtonLink({
   variant,
   size,
   className = "",
   ...props
-}: ComponentProps<typeof Link> & { variant?: ButtonVariant; size?: ButtonSize }) {
-  return <Link className={`${buttonClass(variant, size)} ${className}`} {...props} />;
+}: AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: ButtonVariant; size?: ButtonSize }) {
+  return <a className={`${buttonClass(variant, size)} ${className}`} {...props} />;
+}
+
+/** Круглая кнопка-иконка (назад, меню). */
+export function IconButton({
+  label,
+  className = "",
+  children,
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement> & { label: string }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      className={`inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-line bg-surface text-ink hover:bg-sand/60 ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 }
 
 /* ---------- Тег (чип) ---------- */
@@ -66,6 +99,7 @@ const avatarTones = {
   surface: "bg-surface",
 } as const;
 export type AvatarTone = keyof typeof avatarTones;
+export const avatarToneList = Object.keys(avatarTones) as AvatarTone[];
 
 export function Avatar({
   letter,
@@ -80,7 +114,7 @@ export function Avatar({
 }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink ring-[2.5px] ${ring} ${avatarTones[tone]}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink uppercase ring-[2.5px] ${ring} ${avatarTones[tone]}`}
       style={{ width: size, height: size, fontSize: Math.round(size * 0.38) }}
       aria-hidden="true"
     >
@@ -129,7 +163,7 @@ export function WeekBar({
   return (
     <span className={`flex shrink-0 gap-1 ${className}`} role="img" aria-label={`Пройдено недель: ${done} из ${total}`}>
       {Array.from({ length: total }, (_, i) => (
-        <span key={i} className={`h-2 flex-1 rounded-full ${i < done ? "bg-forest" : i === current ? "bg-sun" : empty}`} />
+        <span key={i} className={`h-2 flex-1 rounded-full ${i < done ? (tone === "dark" ? "bg-sun" : "bg-forest") : i === current ? (tone === "dark" ? "bg-surface" : "bg-sun") : empty}`} />
       ))}
     </span>
   );
@@ -146,5 +180,66 @@ export function Logo({ size = 34 }: { size?: number }) {
       </svg>
       <span className="font-display text-[21px] font-semibold tracking-[-0.04em]">сообща</span>
     </span>
+  );
+}
+
+/* ---------- Переключатель ---------- */
+
+export function Toggle({
+  checked,
+  onChange,
+  label,
+  disabled,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+  label: string;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      aria-label={label}
+      disabled={disabled}
+      onClick={() => onChange(!checked)}
+      className={`relative inline-flex h-7 w-[46px] shrink-0 cursor-pointer items-center rounded-full p-[3px] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+        checked ? "bg-forest" : "bg-line"
+      }`}
+    >
+      <span
+        className={`size-[22px] rounded-full bg-surface shadow-[0_1px_3px_rgb(0_0_0/0.18)] transition-transform ${checked ? "translate-x-[18px]" : ""}`}
+      />
+    </button>
+  );
+}
+
+/* ---------- Карточка-контейнер ---------- */
+
+export function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`rounded-3xl border border-line bg-surface shadow-card ${className}`}>{children}</div>;
+}
+
+/* ---------- Пустое состояние ---------- */
+
+export function EmptyState({
+  title,
+  text,
+  children,
+  icon,
+}: {
+  title: string;
+  text?: string;
+  children?: ReactNode;
+  icon?: ReactNode;
+}) {
+  return (
+    <div className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-line bg-surface/60 px-6 py-10 text-center">
+      {icon && <span className="flex size-14 items-center justify-center rounded-full bg-mint text-forest">{icon}</span>}
+      <h3 className="font-display text-lg font-medium tracking-[-0.01em]">{title}</h3>
+      {text && <p className="max-w-[420px] text-[15px] leading-[1.55] text-ink-2">{text}</p>}
+      {children && <div className="mt-1 flex flex-wrap justify-center gap-2">{children}</div>}
+    </div>
   );
 }

@@ -61,6 +61,8 @@
 
 ## Документы
 - Концепция: docs/concept.md · Технический план: docs/tech-plan.md · Дизайн: docs/design/README.md
+- Интерактивный прототип: src/prototype (демо-режим, данные в localStorage), список действий — docs/prototype-actions.md
+- Превью одной страницей: `node scripts/build-preview.mjs` → docs/preview/index.html (публикуется ссылкой для владельца)
 - Цвета и шрифты — токены в src/app/globals.css. Мелкий текст не красить коралловым/жёлтым/сиреневым.
 
 ## Стиль кода

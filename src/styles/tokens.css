@@ -1,0 +1,55 @@
+/*
+  Дизайн-токены «Сообща» v0.2.
+  Фон — тёплый сливочный, карточки — светлее фона, акценты без изменений.
+  Контраст текста проверен по WCAG (см. docs/design/README.md).
+*/
+@theme {
+  --color-paper: #ede5d7; /* основной фон страниц */
+  --color-surface: #f8f5ef; /* карточки, панели, всплывающие окна */
+  --color-sand: #e3d8c5; /* выделенные секции, нажатые состояния */
+  --color-line: #ddd3c2; /* обводки и разделители */
+
+  --color-ink: #17201c; /* основной текст: 13.3 на фоне */
+  --color-ink-2: #4a544f; /* вторичный текст: 6.3 */
+  --color-ink-3: #6b6559; /* подсказки: 4.6 */
+
+  --color-forest: #1e5c4a;
+  --color-forest-700: #164637;
+  --color-mint: #ddeee6;
+  --color-coral: #ef7556; /* только фон/декор, текст на нём — тёмный */
+  --color-coral-soft: #fce3da;
+  --color-sun: #f4c14e;
+  --color-sun-soft: #fcf0cf;
+  --color-lilac: #8f7eea;
+  --color-lilac-soft: #ece8fd;
+  --color-danger: #b23a26;
+
+  --font-display: "Unbounded Variable", system-ui, sans-serif;
+  --font-sans: "Onest Variable", system-ui, sans-serif;
+
+  --shadow-card: 0 1px 0 rgb(23 32 28 / 0.04), 0 10px 30px -14px rgb(23 32 28 / 0.18);
+  --shadow-float: 0 24px 50px -18px rgb(23 32 28 / 0.28);
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-forest);
+  outline-offset: 2px;
+}
+
+/* Горизонтальная прокрутка без полосы (для тегов на телефоне) */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
