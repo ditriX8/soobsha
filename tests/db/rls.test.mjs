@@ -118,7 +118,7 @@ const got = new Promise((resolve, reject) => {
   ch.subscribe((status) => {
     if (status === "SUBSCRIBED") {
       let k = 0;
-      const fire = () => anya.c.from("tasks").insert({ circle_id: circleId, title: `Синхронная задача ${++k}` });
+      const fire = () => anya.c.from("tasks").insert({ circle_id: circleId, title: `Синхронная задача ${++k}` }).then(() => {}); // запрос уходит только при then/await
       setTimeout(fire, 500);
       timer = setInterval(fire, 3000);
     }
