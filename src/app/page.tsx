@@ -1,6 +1,6 @@
-import { PrototypeApp } from "@/prototype/app";
+import { PlannerApp } from "@/planner/app";
 
-/** Интерактивный прототип «Сообща» (демо-режим, данные в браузере). */
+/** «Сообща» — совместный планер для маленьких групп. Всё приложение — клиентское, данные в Supabase. */
 export default function HomePage() {
-  return <PrototypeApp />;
+  return <PlannerApp />;
 }

@@ -1,29 +1,28 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
-import { LockIcon } from "@/components/icons";
+import { InfoIcon, LockIcon } from "@/components/icons";
 import { ButtonLink, EmptyState } from "@/components/ui";
+import { AccountProvider, useAccount } from "./auth";
 import { FeedbackProvider } from "./feedback";
 import { setReturnTo, useRoute, type Route } from "./router";
-import { DemoBanner, Footer, Header, Page, TabBar } from "./shell";
-import { StoreProvider, useStore, useStoreReady } from "./store";
-import { CatalogView } from "./views/catalog";
+import { Footer, Header, OfflineBanner, Page, TabBar } from "./shell";
+import { isConfigured } from "./supabase";
 import { CircleView } from "./views/circle";
-import { LoginView, NewCircleView } from "./views/forms";
+import { JoinView, LoginView, MyCirclesView, NewCircleView } from "./views/entry";
 import { HomeView } from "./views/home";
-import { AboutDemoView, PrivacyView, RulesView } from "./views/info";
-import { MyCirclesView, NotificationsView } from "./views/lists";
+import { AboutView, PrivacyView, RulesView } from "./views/info";
 import { MyProfileView, ProfileEditView, UserProfileView } from "./views/profile";
-import { NotificationSettingsView, PrivacySettingsView, SettingsView } from "./views/settings";
+import { NotificationSettingsView, NotificationsView, PrivacySettingsView, SettingsView } from "./views/settings";
 
-const NEEDS_LOGIN: Route["name"][] = ["new", "my", "notifications", "profile", "profile-edit", "settings", "settings-notifications", "settings-privacy"];
+const NEEDS_LOGIN: Route["name"][] = ["new", "my", "circle", "notifications", "profile", "profile-edit", "user", "settings", "settings-notifications", "settings-privacy"];
 
 function NeedLogin({ hash }: { hash: string }) {
   return (
     <Page narrow>
-      <EmptyState title="Нужно войти" text="Этот раздел доступен после входа в демо-режим." icon={<LockIcon />}>
+      <EmptyState title="Нужно войти" text="Вход занимает 10 секунд: только никнейм, без почты и телефона." icon={<LockIcon />}>
         <ButtonLink href="#login" onClick={() => setReturnTo(hash || "#my")}>
-          Войти в демо
+          Войти
         </ButtonLink>
       </EmptyState>
     </Page>
@@ -31,15 +30,17 @@ function NeedLogin({ hash }: { hash: string }) {
 }
 
 function Screen({ route, hash }: { route: Route; hash: string }): ReactNode {
-  const { me } = useStore();
+  const { me, session } = useAccount();
+  // Вошёл, но ещё не выбрал никнейм — сначала профиль
+  if (session && !me && route.name !== "home" && !["rules", "privacy", "about"].includes(route.name)) return <LoginView />;
   if (!me && NEEDS_LOGIN.includes(route.name)) return <NeedLogin hash={hash} />;
   switch (route.name) {
     case "home":
       return <HomeView anchor={route.anchor} />;
-    case "catalog":
-      return <CatalogView />;
     case "login":
       return <LoginView />;
+    case "join":
+      return <JoinView key={route.code ?? ""} code={route.code} />;
     case "circle":
       return <CircleView key={route.id} id={route.id} />;
     case "new":
@@ -64,26 +65,23 @@ function Screen({ route, hash }: { route: Route; hash: string }): ReactNode {
       return <RulesView />;
     case "privacy":
       return <PrivacyView />;
-    case "about-demo":
-      return <AboutDemoView />;
+    case "about":
+      return <AboutView />;
   }
 }
 
 function Shell() {
-  const ready = useStoreReady();
+  const { ready } = useAccount();
   const { route, hash } = useRoute();
-
   const anchor = route.name === "home" ? route.anchor : undefined;
   useEffect(() => {
     if (!anchor) window.scrollTo({ top: 0 });
   }, [hash, anchor]);
 
-  if (!ready) {
-    return <div className="flex min-h-screen items-center justify-center text-ink-3">Загрузка…</div>;
-  }
+  if (!ready) return <div className="flex min-h-screen items-center justify-center text-ink-3">Загрузка…</div>;
   return (
     <div className="flex min-h-screen flex-col">
-      <DemoBanner />
+      <OfflineBanner />
       <Header route={route} />
       <Screen route={route} hash={hash} />
       <Footer />
@@ -92,12 +90,19 @@ function Shell() {
   );
 }
 
-export function PrototypeApp() {
+export function PlannerApp() {
+  if (!isConfigured) {
+    return (
+      <main className="mx-auto max-w-[640px] px-5 py-16">
+        <EmptyState title="Сервер не настроен" text="Не заданы адрес и ключ Supabase (NEXT_PUBLIC_SUPABASE_URL и NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY). См. .env.example." icon={<InfoIcon />} />
+      </main>
+    );
+  }
   return (
-    <StoreProvider>
+    <AccountProvider>
       <FeedbackProvider>
         <Shell />
       </FeedbackProvider>
-    </StoreProvider>
+    </AccountProvider>
   );
 }

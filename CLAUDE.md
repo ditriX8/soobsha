@@ -21,9 +21,12 @@
 - `npm run lint` — проверка стиля кода
 - `npm run typecheck` — проверка типов TypeScript
 - `npm run build` — сборка
-- `npm run test:e2e` — тесты Playwright
+- `npm run test:e2e` — тесты Playwright (нужен запущенный локальный Supabase)
+- `npm run test:db` — проверки прав доступа (RLS) и синхронизации на локальном Supabase
+- `npx supabase start` — локальный Supabase (в облачной среде Claude: сначала `dockerd &`, затем `SUPABASE_INTERNAL_IMAGE_REGISTRY=docker.io npx supabase start`)
+- `npx supabase db reset` — пересоздать локальную базу из миграций
 
-Перед каждым коммитом: `npm run lint && npm run typecheck && npm run build && npm run test:e2e`.
+Перед каждым коммитом: `npm run lint && npm run typecheck && npm run build && npm run test:db && npm run test:e2e`.
 
 ## Что можно делать самостоятельно
 - Писать и менять код, тесты, документацию внутри этого репозитория.
@@ -61,8 +64,9 @@
 
 ## Документы
 - Концепция: docs/concept.md · Технический план: docs/tech-plan.md · Дизайн: docs/design/README.md
-- Интерактивный прототип: src/prototype (демо-режим, данные в localStorage), список действий — docs/prototype-actions.md
-- Превью одной страницей: `node scripts/build-preview.mjs` → docs/preview/index.html (публикуется ссылкой для владельца)
+- Концепция v2 (совместный планер) и план многопользовательской работы: docs/planner-v2.md
+- Приложение: src/planner (клиентское SPA с навигацией по якорям, данные — Supabase, синхронизация — Realtime)
+- База: supabase/migrations — схема, RLS, функции. Менять только новыми миграциями.
 - Цвета и шрифты — токены в src/app/globals.css. Мелкий текст не красить коралловым/жёлтым/сиреневым.
 
 ## Стиль кода

@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 export type Route =
   | { name: "home"; anchor?: string }
-  | { name: "catalog" }
   | { name: "login" }
+  | { name: "join"; code?: string }
   | { name: "circle"; id: string }
   | { name: "new" }
   | { name: "my" }
@@ -18,28 +18,16 @@ export type Route =
   | { name: "settings-privacy" }
   | { name: "rules" }
   | { name: "privacy" }
-  | { name: "about-demo" };
+  | { name: "about" };
 
-const simple = [
-  "catalog",
-  "login",
-  "new",
-  "my",
-  "notifications",
-  "profile",
-  "profile-edit",
-  "settings",
-  "settings-notifications",
-  "settings-privacy",
-  "rules",
-  "privacy",
-  "about-demo",
-] as const;
+const simple = ["login", "new", "my", "notifications", "profile", "profile-edit", "settings", "settings-notifications", "settings-privacy", "rules", "privacy", "about"] as const;
 
 export function parseHash(hash: string): Route {
   const h = decodeURIComponent(hash.replace(/^#/, ""));
   if (!h || h === "home") return { name: "home" };
   if (h === "how" || h === "safety") return { name: "home", anchor: h };
+  if (h === "join") return { name: "join" };
+  if (h.startsWith("join-")) return { name: "join", code: h.slice(5) };
   if (h.startsWith("circle-")) return { name: "circle", id: h.slice(7) };
   if (h.startsWith("u-")) return { name: "user", id: h.slice(2) };
   if ((simple as readonly string[]).includes(h)) return { name: h as (typeof simple)[number] };

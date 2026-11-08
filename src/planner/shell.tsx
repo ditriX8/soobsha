@@ -3,17 +3,27 @@
 import type { ReactNode } from "react";
 import { BackIcon, BellIcon, CirclesIcon, PlusIcon, SearchIcon, UserIcon } from "@/components/icons";
 import { Avatar, ButtonLink, IconButton, Logo } from "@/components/ui";
+import { useEffect, useState } from "react";
+import { useAccount } from "./auth";
 import { back, setReturnTo, type Route } from "./router";
-import { useStore } from "./store";
 
-export function DemoBanner() {
-  const { persistent } = useStore();
+/** Полоса «нет соединения»: без сети изменения не сохраняются. */
+export function OfflineBanner() {
+  const [online, setOnline] = useState(true);
+  useEffect(() => {
+    const update = () => setOnline(navigator.onLine);
+    update();
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => {
+      window.removeEventListener("online", update);
+      window.removeEventListener("offline", update);
+    };
+  }, []);
+  if (online) return null;
   return (
-    <div className="bg-ink px-4 py-2 text-center text-[13px] leading-snug text-surface">
-      {persistent ? "Демо-режим: данные хранятся только в этом браузере, другие люди — вымышленные. " : "Браузер не даёт сохранять данные — после перезагрузки всё сбросится. "}
-      <a href="#about-demo" className="font-semibold underline underline-offset-2">
-        Что работает?
-      </a>
+    <div role="alert" className="bg-danger px-4 py-2 text-center text-[13px] font-semibold text-surface">
+      Нет соединения с интернетом — изменения не сохранятся, пока связь не вернётся.
     </div>
   );
 }
@@ -31,8 +41,7 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
 }
 
 export function Header({ route }: { route: Route }) {
-  const { me, state } = useStore();
-  const unread = state.notifications.filter((n) => !n.read).length;
+  const { me, unread } = useAccount();
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-paper/90 backdrop-blur-md">
@@ -46,14 +55,14 @@ export function Header({ route }: { route: Route }) {
             <NavLink href="#my" active={route.name === "my"}>
               Мои круги
             </NavLink>
-            <NavLink href="#catalog" active={route.name === "catalog"}>
-              Найти круг
+            <NavLink href="#join" active={route.name === "join"}>
+              Вступить по коду
             </NavLink>
           </nav>
         ) : (
           <nav aria-label="Основная навигация" className="hidden items-center gap-8 text-[15px] font-medium text-ink-2 lg:flex">
-            <a href="#catalog" className="hover:text-ink">
-              Круги
+            <a href="#join" className="hover:text-ink">
+              Есть код приглашения
             </a>
             <a href="#how" className="hover:text-ink">
               Как это работает
@@ -90,11 +99,8 @@ export function Header({ route }: { route: Route }) {
         ) : (
           <div className="flex items-center gap-2">
             <span className="hidden gap-2 sm:flex">
-              <ButtonLink href="#login" variant="ghost" onClick={() => setReturnTo("#my")}>
-                Войти
-              </ButtonLink>
               <ButtonLink href="#login" onClick={() => setReturnTo("#my")}>
-                Создать аккаунт
+                Войти
               </ButtonLink>
             </span>
             <span className="sm:hidden">
@@ -111,12 +117,11 @@ export function Header({ route }: { route: Route }) {
 
 /** Нижняя панель вкладок — только на телефоне и только после входа. */
 export function TabBar({ route }: { route: Route }) {
-  const { me, state } = useStore();
+  const { me, unread } = useAccount();
   if (!me) return null;
-  const unread = state.notifications.filter((n) => !n.read).length;
   const tabs = [
     { href: "#my", label: "Мои круги", icon: CirclesIcon, active: route.name === "my" || route.name === "circle" },
-    { href: "#catalog", label: "Найти", icon: SearchIcon, active: route.name === "catalog" },
+    { href: "#join", label: "По коду", icon: SearchIcon, active: route.name === "join" },
     { href: "#notifications", label: "Уведомления", icon: BellIcon, active: route.name === "notifications", badge: unread },
     { href: "#profile", label: "Профиль", icon: UserIcon, active: route.name.startsWith("profile") || route.name.startsWith("settings") },
   ];
@@ -149,7 +154,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-line pb-20 md:pb-0">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-4 px-5 py-8 text-sm text-ink-2 md:flex-row md:items-center md:justify-between md:px-8">
-        <span className="text-ink-3">© 2026 Сообща · прототип</span>
+        <span className="text-ink-3">© 2026 Сообща · бета-версия</span>
         <nav aria-label="Служебные ссылки" className="flex flex-wrap gap-x-7 gap-y-2">
           <a href="#rules" className="hover:text-ink">
             Правила сообщества
@@ -157,8 +162,8 @@ export function Footer() {
           <a href="#privacy" className="hover:text-ink">
             Конфиденциальность
           </a>
-          <a href="#about-demo" className="hover:text-ink">
-            О демо-режиме
+          <a href="#about" className="hover:text-ink">
+            О проекте
           </a>
         </nav>
       </div>

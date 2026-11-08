@@ -1,59 +1,12 @@
 "use client";
 
 import { useState, type InputHTMLAttributes, type ReactNode, type TextareaHTMLAttributes } from "react";
-import { ArrowRightIcon, CloseIcon, InfoIcon } from "@/components/icons";
-import { AvatarStack, Button, Chip, WeekBar } from "@/components/ui";
-import { plural } from "@/lib/format";
+import { CloseIcon, InfoIcon } from "@/components/icons";
+import { Button } from "@/components/ui";
+import { useAccount } from "./auth";
 import { useFeedback, Modal } from "./feedback";
-import { currentWeek, formatDate, freeSeats, looksLikeContacts } from "./logic";
-import { topicTone } from "./seed";
-import { useStore } from "./store";
-import type { Circle, ReportReason } from "./types";
-
-/* ---------- Карточка круга ---------- */
-
-export function CircleCard({ circle }: { circle: Circle }) {
-  const { state, me } = useStore();
-  const free = freeSeats(circle);
-  const week = currentWeek(circle);
-  const isMember = !!me && circle.members.includes(me.id);
-  const people = circle.members.slice(0, 4).map((id) => {
-    const p = state.people[id];
-    return { letter: p?.nickname[0] ?? "?", tone: p?.tone ?? "surface" };
-  });
-  return (
-    <article className="relative flex flex-col gap-4 rounded-[28px] border border-line bg-surface p-6 shadow-card transition-shadow hover:shadow-float" data-testid="circle-card">
-      <div className="flex items-center justify-between gap-3">
-        <Chip tone={topicTone(circle.topic)}>{circle.topic}</Chip>
-        <span className="text-[13px] font-medium text-ink-3">
-          {isMember ? "вы участник" : circle.joinMode === "approval" ? "по заявке" : "открытый"}
-        </span>
-      </div>
-      <h3 className="font-display text-xl leading-[1.3] font-medium tracking-[-0.01em]">
-        <a href={`#circle-${circle.id}`} className="after:absolute after:inset-0 after:rounded-[28px] focus-visible:outline-none">
-          {circle.title}
-        </a>
-      </h3>
-      <p className="line-clamp-3 text-[15px] leading-[1.55] text-ink-2">{circle.description || circle.goal}</p>
-      <div className="flex items-center gap-3">
-        <WeekBar total={circle.weeks} done={Math.max(0, week - 1)} current={week > 0 ? week - 1 : -1} className="w-20" />
-        <span className="text-[13px] font-medium whitespace-nowrap text-ink-2">
-          {week === 0 ? `${circle.weeks} нед. · старт ${formatDate(circle.startDate)}` : week > circle.weeks ? "завершён" : `неделя ${week} из ${circle.weeks}`}
-        </span>
-      </div>
-      <div className="mt-auto flex items-center gap-3 border-t border-line pt-4">
-        <AvatarStack people={people} size={36} />
-        <span className="text-sm font-medium">
-          {circle.members.length} из {circle.capacity}
-          {free > 0 ? ` · ${free} ${plural(free, "место", "места", "мест")}` : " · мест нет"}
-        </span>
-        <span className="ml-auto flex size-10 items-center justify-center rounded-full bg-mint text-forest" aria-hidden="true">
-          <ArrowRightIcon size={18} />
-        </span>
-      </div>
-    </article>
-  );
-}
+import { looksLikeContacts } from "./logic";
+import type { ReportReason, ReportTarget } from "./types";
 
 /* ---------- Поля форм ---------- */
 
@@ -184,32 +137,33 @@ export function ReportDialog({
   targetType,
   targetId,
   authorId,
+  authorNick,
   onClose,
 }: {
   title: string;
   subtitle: string;
-  targetType: "step" | "comment" | "message" | "user";
+  targetType: ReportTarget;
   targetId: string;
   authorId: string;
+  authorNick: string;
   onClose: () => void;
 }) {
-  const { actions, state } = useStore();
+  const { report, block } = useAccount();
   const { toast } = useFeedback();
   const [reason, setReason] = useState<ReportReason>("spam");
   const [alsoBlock, setAlsoBlock] = useState(targetType === "user");
-  const author = state.people[authorId];
+  const [busy, setBusy] = useState(false);
 
-  const submit = () => {
-    const r = actions.report(targetType, targetId, reason);
+  const submit = async () => {
+    setBusy(true);
+    const r = await report(targetType, targetId, reason);
     if (!r.ok) {
+      setBusy(false);
       toast(r.error, "error");
       return;
     }
-    if (alsoBlock) actions.block(authorId);
-    toast(
-      `Жалоба сохранена${alsoBlock ? `, @${author?.nickname} заблокирован` : ""}. ${targetType === "user" ? "" : "Публикация скрыта у вас. "}В демо нет модератора — жалоба хранится только в браузере.`,
-      "success",
-    );
+    if (alsoBlock) await block(authorId);
+    toast(`Жалоба отправлена модератору${alsoBlock ? `, @${authorNick} заблокирован` : ""}.${targetType === "user" ? "" : " У вас это скрыто."}`, "success");
     onClose();
   };
 
@@ -233,12 +187,12 @@ export function ReportDialog({
         <label className="mt-4 flex cursor-pointer items-start gap-3">
           <input type="checkbox" checked={alsoBlock} onChange={(e) => setAlsoBlock(e.target.checked)} className="mt-0.5 size-5 accent-[#1E5C4A]" />
           <span>
-            <span className="block font-semibold">Также заблокировать @{author?.nickname}</span>
-            <span className="text-sm text-ink-3">Вы перестанете видеть его публикации, он не сможет вступить в ваши круги</span>
+            <span className="block font-semibold">Также заблокировать @{authorNick}</span>
+            <span className="text-sm text-ink-3">Вы перестанете видеть его комментарии и сообщения</span>
           </span>
         </label>
       )}
-      <Button variant="danger" className="mt-5 w-full" onClick={submit}>
+      <Button variant="danger" className="mt-5 w-full" onClick={submit} disabled={busy}>
         Отправить жалобу
       </Button>
       <p className="mt-3 text-center text-xs leading-[1.5] text-ink-3">
