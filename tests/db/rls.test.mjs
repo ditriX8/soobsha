@@ -108,15 +108,19 @@ assert.ok(r.data.some((n) => n.kind === "join")); assert.ok(r.data.some((n) => n
 // Синхронизация в реальном времени (ключ доступа — до подписки)
 await boris.c.realtime.setAuth((await boris.c.auth.getSession()).data.session.access_token);
 await eve.c.realtime.setAuth((await eve.c.auth.getSession()).data.session.access_token);
+// При холодном старте (например, в CI) сервису синхронизации нужно несколько секунд — повторяем изменение, пока не дойдёт
 const got = new Promise((resolve, reject) => {
-  const to = setTimeout(() => reject(new Error("Realtime: событие не пришло за 10 с")), 10000);
+  let timer;
+  const to = setTimeout(() => { clearInterval(timer); reject(new Error("Realtime: событие не пришло за 30 с")); }, 30000);
   const ch = boris.c.channel("t").on("postgres_changes", { event: "*", schema: "public", table: "tasks", filter: `circle_id=eq.${circleId}` }, (p) => {
-    if (p.new?.title === "Синхронная задача") { clearTimeout(to); ch.unsubscribe(); resolve(p); }
+    if (p.new?.title?.startsWith("Синхронная задача")) { clearTimeout(to); clearInterval(timer); ch.unsubscribe(); resolve(p); }
   });
-  ch.subscribe(async (status) => {
+  ch.subscribe((status) => {
     if (status === "SUBSCRIBED") {
-      await new Promise((r2) => setTimeout(r2, 500));
-      await anya.c.from("tasks").insert({ circle_id: circleId, title: "Синхронная задача" });
+      let k = 0;
+      const fire = () => anya.c.from("tasks").insert({ circle_id: circleId, title: `Синхронная задача ${++k}` });
+      setTimeout(fire, 500);
+      timer = setInterval(fire, 3000);
     }
   });
 });
