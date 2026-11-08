@@ -493,7 +493,6 @@ language plpgsql security definer set search_path = '' as $$
 declare
   alphabet constant text := 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   c text;
-  i int;
 begin
   if not private.is_owner(p_circle) then raise exception 'Приглашать может только создатель круга' using errcode = 'P0001'; end if;
   if p_days not between 1 and 30 then raise exception 'Срок приглашения — от 1 до 30 дней' using errcode = 'P0001'; end if;
