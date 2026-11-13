@@ -1,5 +1,0 @@
-/* Стили для превью одной страницей: без локальных шрифтов (они подключаются с Google Fonts). */
-@import "tailwindcss";
-@source "../";
-@import "./tokens.css";
-:root { --font-display: "Unbounded", system-ui, sans-serif; --font-sans: "Onest", system-ui, sans-serif; }

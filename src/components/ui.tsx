@@ -1,200 +1,83 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import { motion, type HTMLMotionProps } from 'framer-motion'
+import { Minus, Plus, Star } from 'lucide-react'
+import { useMemo, type CSSProperties, type ReactNode } from 'react'
+import { cn, EASE } from '../lib/utils'
 
-/* ---------- Кнопка ---------- */
-
-export type ButtonVariant = "primary" | "secondary" | "accent" | "ghost" | "danger" | "dangerSoft";
-type ButtonSize = "sm" | "md" | "lg";
-
-const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 min-h-11 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50";
-
-const buttonVariants: Record<ButtonVariant, string> = {
-  primary: "bg-forest text-surface hover:bg-forest-700",
-  secondary: "bg-surface text-ink border border-line hover:bg-sand/60",
-  // На коралловом фоне — тёмный текст: белый не проходит по контрасту.
-  accent: "bg-coral text-ink hover:brightness-95",
-  ghost: "text-forest hover:bg-mint",
-  danger: "bg-danger text-surface hover:brightness-95",
-  dangerSoft: "bg-coral-soft text-danger hover:brightness-95",
-};
-
-const buttonSizes: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm min-h-10",
-  md: "px-5 py-2.5 text-[15px]",
-  lg: "px-7 py-4 text-base",
-};
-
-export function buttonClass(variant: ButtonVariant = "primary", size: ButtonSize = "md") {
-  return `${buttonBase} ${buttonVariants[variant]} ${buttonSizes[size]}`;
-}
-
-export function Button({
-  variant,
-  size,
-  className = "",
-  type = "button",
-  ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: ButtonVariant; size?: ButtonSize }) {
-  return <button type={type} className={`${buttonClass(variant, size)} ${className}`} {...props} />;
-}
-
-/** Ссылка, выглядящая как кнопка. Навигация — по якорю (#catalog и т. п.). */
-export function ButtonLink({
-  variant,
-  size,
-  className = "",
-  ...props
-}: AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: ButtonVariant; size?: ButtonSize }) {
-  return <a className={`${buttonClass(variant, size)} ${className}`} {...props} />;
-}
-
-/** Круглая кнопка-иконка (назад, меню). */
-export function IconButton({
-  label,
-  className = "",
+export function Reveal({
   children,
-  ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { label: string }) {
+  delay = 0,
+  y = 28,
+  className,
+  ...rest
+}: { children: ReactNode; delay?: number; y?: number } & HTMLMotionProps<'div'>) {
   return (
-    <button
-      type="button"
-      aria-label={label}
-      title={label}
-      className={`inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-line bg-surface text-ink hover:bg-sand/60 ${className}`}
-      {...props}
+    <motion.div
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.9, ease: EASE, delay }}
+      className={className}
+      {...rest}
     >
       {children}
-    </button>
-  );
+    </motion.div>
+  )
 }
 
-/* ---------- Тег (чип) ---------- */
-
-export type Tone = "mint" | "lilac" | "coral" | "sun" | "ink" | "outline";
-
-const toneClass: Record<Tone, string> = {
-  mint: "bg-mint text-forest-700",
-  lilac: "bg-lilac-soft text-ink",
-  coral: "bg-coral-soft text-ink",
-  sun: "bg-sun-soft text-ink",
-  ink: "bg-ink text-surface",
-  outline: "border border-line text-ink-2 bg-surface",
-};
-
-export function Chip({ tone = "mint", children, className = "" }: { tone?: Tone; children: ReactNode; className?: string }) {
-  return (
-    <span className={`inline-flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap ${toneClass[tone]} ${className}`}>
-      {children}
-    </span>
-  );
-}
-
-/* ---------- Аватар ---------- */
-
-const avatarTones = {
-  coral: "bg-coral-soft",
-  sun: "bg-sun-soft",
-  lilac: "bg-lilac-soft",
-  mint: "bg-mint",
-  surface: "bg-surface",
-} as const;
-export type AvatarTone = keyof typeof avatarTones;
-export const avatarToneList = Object.keys(avatarTones) as AvatarTone[];
-
-export function Avatar({
-  letter,
-  tone = "coral",
-  size = 40,
-  ring = "ring-surface",
-}: {
-  letter: string;
-  tone?: AvatarTone;
-  size?: number;
-  ring?: string;
-}) {
+export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full font-display font-medium text-ink uppercase ring-[2.5px] ${ring} ${avatarTones[tone]}`}
-      style={{ width: size, height: size, fontSize: Math.round(size * 0.38) }}
-      aria-hidden="true"
+      className={cn(
+        'inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] text-amber uppercase',
+        className,
+      )}
     >
-      {letter}
+      <span className="size-1.5 rounded-full bg-flame shadow-[0_0_10px_2px_rgba(255,138,31,0.7)]" />
+      {children}
     </span>
-  );
+  )
 }
 
-export function AvatarStack({
-  people,
-  size = 36,
-  ring,
+export function SectionHeading({
+  eyebrow,
+  title,
+  text,
+  align = 'left',
+  aside,
 }: {
-  people: { letter: string; tone: AvatarTone }[];
-  size?: number;
-  ring?: string;
+  eyebrow: string
+  title: ReactNode
+  text?: string
+  align?: 'left' | 'center'
+  aside?: ReactNode
 }) {
   return (
-    <span className="flex">
-      {people.map((p, i) => (
-        <span key={i} className={i === 0 ? "" : "-ml-2.5"}>
-          <Avatar letter={p.letter} tone={p.tone} size={size} ring={ring} />
-        </span>
-      ))}
-    </span>
-  );
+    <div
+      className={cn(
+        'mb-10 flex flex-col gap-6 md:mb-14',
+        align === 'center' ? 'items-center text-center' : 'md:flex-row md:items-end md:justify-between',
+      )}
+    >
+      <Reveal className={cn('max-w-2xl', align === 'center' && 'flex flex-col items-center')}>
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h2 className="mt-5 font-display text-[clamp(1.9rem,4.2vw,3.4rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-balance">
+          {title}
+        </h2>
+        {text && <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-smoke md:text-base">{text}</p>}
+      </Reveal>
+      {aside && <Reveal delay={0.1}>{aside}</Reveal>}
+    </div>
+  )
 }
-
-/* ---------- Полоса недель ---------- */
-
-/** Срок круга по неделям. Сегменты делят фиксированную ширину, поэтому 4 и 12 недель занимают одинаково места. */
-export function WeekBar({
-  total,
-  done,
-  current = done,
-  className = "w-24",
-  tone = "light",
-}: {
-  total: number;
-  done: number;
-  current?: number;
-  className?: string;
-  tone?: "light" | "dark";
-}) {
-  const empty = tone === "dark" ? "bg-forest-700" : "bg-line";
-  return (
-    <span className={`flex shrink-0 gap-1 ${className}`} role="img" aria-label={`Пройдено недель: ${done} из ${total}`}>
-      {Array.from({ length: total }, (_, i) => (
-        <span key={i} className={`h-2 flex-1 rounded-full ${i < done ? (tone === "dark" ? "bg-sun" : "bg-forest") : i === current ? (tone === "dark" ? "bg-surface" : "bg-sun") : empty}`} />
-      ))}
-    </span>
-  );
-}
-
-/* ---------- Логотип ---------- */
-
-export function Logo({ size = 34 }: { size?: number }) {
-  return (
-    <span className="inline-flex items-center gap-2.5">
-      <svg width={size} height={size} viewBox="0 0 36 36" aria-hidden="true">
-        <circle cx="13" cy="18" r="11" fill="#1E5C4A" />
-        <circle cx="23" cy="18" r="11" fill="#EF7556" fillOpacity="0.85" />
-      </svg>
-      <span className="font-display text-[21px] font-semibold tracking-[-0.04em]">сообща</span>
-    </span>
-  );
-}
-
-/* ---------- Переключатель ---------- */
 
 export function Toggle({
   checked,
   onChange,
   label,
-  disabled,
 }: {
-  checked: boolean;
-  onChange: (v: boolean) => void;
-  label: string;
-  disabled?: boolean;
+  checked: boolean
+  onChange: (v: boolean) => void
+  label: string
 }) {
   return (
     <button
@@ -202,44 +85,184 @@ export function Toggle({
       role="switch"
       aria-checked={checked}
       aria-label={label}
-      disabled={disabled}
       onClick={() => onChange(!checked)}
-      className={`relative inline-flex h-7 w-[46px] shrink-0 cursor-pointer items-center rounded-full p-[3px] transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
-        checked ? "bg-forest" : "bg-line"
-      }`}
+      className={cn(
+        'relative inline-flex h-7 w-12 shrink-0 items-center rounded-full p-1 transition-colors duration-300',
+        checked ? 'bg-flame shadow-[0_0_18px_-2px_rgba(255,138,31,0.7)]' : 'bg-white/12',
+      )}
     >
-      <span
-        className={`size-[22px] rounded-full bg-surface shadow-[0_1px_3px_rgb(0_0_0/0.18)] transition-transform ${checked ? "translate-x-[18px]" : ""}`}
+      <motion.span
+        layout
+        transition={{ type: 'spring', stiffness: 600, damping: 34 }}
+        className={cn('size-5 rounded-full bg-white shadow-md', checked && 'ml-auto')}
       />
     </button>
-  );
+  )
 }
 
-/* ---------- Карточка-контейнер ---------- */
-
-export function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`rounded-3xl border border-line bg-surface shadow-card ${className}`}>{children}</div>;
-}
-
-/* ---------- Пустое состояние ---------- */
-
-export function EmptyState({
-  title,
-  text,
-  children,
-  icon,
+export function Stepper({
+  value,
+  onChange,
+  min = 1,
+  max = 99,
+  size = 'md',
 }: {
-  title: string;
-  text?: string;
-  children?: ReactNode;
-  icon?: ReactNode;
+  value: number
+  onChange: (v: number) => void
+  min?: number
+  max?: number
+  size?: 'sm' | 'md'
+}) {
+  const btn = size === 'sm' ? 'size-7' : 'size-10'
+  return (
+    <div className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] p-1">
+      <button
+        type="button"
+        aria-label="Decrease"
+        disabled={value <= min}
+        onClick={() => onChange(value - 1)}
+        className={cn(btn, 'grid place-items-center rounded-full transition hover:bg-white/10 disabled:opacity-30')}
+      >
+        <Minus className="size-4" />
+      </button>
+      <motion.span
+        key={value}
+        initial={{ y: -8, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className={cn('text-center font-semibold tabular-nums', size === 'sm' ? 'w-6 text-sm' : 'w-8')}
+      >
+        {value}
+      </motion.span>
+      <button
+        type="button"
+        aria-label="Increase"
+        disabled={value >= max}
+        onClick={() => onChange(value + 1)}
+        className={cn(btn, 'grid place-items-center rounded-full transition hover:bg-white/10 disabled:opacity-30')}
+      >
+        <Plus className="size-4" />
+      </button>
+    </div>
+  )
+}
+
+export function Segmented<T extends string>({
+  options,
+  value,
+  onChange,
+  layoutId,
+}: {
+  options: { id: T; label: string; hint?: string }[]
+  value: T
+  onChange: (v: T) => void
+  layoutId: string
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-3xl border border-dashed border-line bg-surface/60 px-6 py-10 text-center">
-      {icon && <span className="flex size-14 items-center justify-center rounded-full bg-mint text-forest">{icon}</span>}
-      <h3 className="font-display text-lg font-medium tracking-[-0.01em]">{title}</h3>
-      {text && <p className="max-w-[420px] text-[15px] leading-[1.55] text-ink-2">{text}</p>}
-      {children && <div className="mt-1 flex flex-wrap justify-center gap-2">{children}</div>}
+    <div className="flex gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1" role="radiogroup">
+      {options.map((o) => {
+        const active = o.id === value
+        return (
+          <button
+            key={o.id}
+            type="button"
+            role="radio"
+            aria-checked={active}
+            onClick={() => onChange(o.id)}
+            className={cn(
+              'relative flex-1 rounded-full px-3 py-2 text-[13px] font-semibold whitespace-nowrap transition-colors',
+              active ? 'text-coal' : 'text-smoke hover:text-cream',
+            )}
+          >
+            {active && (
+              <motion.span
+                layoutId={layoutId}
+                className="btn-flame absolute inset-0 rounded-full"
+                transition={{ type: 'spring', stiffness: 500, damping: 38 }}
+              />
+            )}
+            <span className="relative">{o.label}</span>
+            {o.hint && <span className={cn('relative ml-1 text-[11px]', active ? 'text-coal/70' : 'text-ash')}>{o.hint}</span>}
+          </button>
+        )
+      })}
     </div>
-  );
+  )
+}
+
+export function Rating({ value, count, className }: { value: number; count?: number; className?: string }) {
+  return (
+    <span className={cn('inline-flex items-center gap-1 text-[13px] font-semibold', className)}>
+      <Star className="size-3.5 fill-amber text-amber" />
+      {value.toFixed(1)}
+      {count !== undefined && <span className="font-normal text-ash">({count})</span>}
+    </span>
+  )
+}
+
+export function Logo({ className }: { className?: string }) {
+  return (
+    <span className={cn('inline-flex items-center gap-2.5', className)}>
+      <svg viewBox="0 0 64 64" className="size-9" aria-hidden>
+        <defs>
+          <linearGradient id="logo-g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#FFB547" />
+            <stop offset="1" stopColor="#FF6A1A" />
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+        <path
+          d="M32 12c2 8 12 12 12 24a12 12 0 0 1-24 0c0-6 3-9 5-12 1 4 3 6 5 6-2-6 0-12 2-18z"
+          fill="url(#logo-g)"
+        />
+      </svg>
+      <span className="font-display text-lg font-bold tracking-[0.08em]">EMBER</span>
+    </span>
+  )
+}
+
+/** Warm blurred light blobs used as section backdrops (bokeh from the reference). */
+export function Glow({ className }: { className?: string }) {
+  return (
+    <div
+      aria-hidden
+      className={cn('pointer-events-none absolute rounded-full bg-flame/30 blur-[120px]', className)}
+    />
+  )
+}
+
+export function Embers({ count = 18 }: { count?: number }) {
+  const dots = useMemo(
+    () =>
+      Array.from({ length: count }, (_, i) => {
+        const r = (n: number) => ((Math.sin(i * 9301 + n * 49297) + 1) / 2) // deterministic pseudo-random
+        return {
+          left: `${r(1) * 100}%`,
+          size: 2 + r(2) * 5,
+          duration: 7 + r(3) * 9,
+          delay: r(4) * -16,
+          drift: `${(r(5) - 0.5) * 160}px`,
+        }
+      }),
+    [count],
+  )
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      {dots.map((d, i) => (
+        <span
+          key={i}
+          className="ember-dot"
+          style={
+            {
+              left: d.left,
+              width: d.size,
+              height: d.size,
+              animationDuration: `${d.duration}s`,
+              animationDelay: `${d.delay}s`,
+              '--drift': d.drift,
+            } as CSSProperties
+          }
+        />
+      ))}
+    </div>
+  )
 }
